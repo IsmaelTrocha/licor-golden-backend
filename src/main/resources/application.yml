@@ -7,20 +7,24 @@ spring:
       activate:
         on-profile: local
 
-    profile: local
-    datasource:
-      url: ${DB_URL}
-      username: ${DB_USERNAME}
-      password: ${DB_PASSWORD}
-      test-on-borrow: true
-      validation-query: SELECT 1 FROM dual
+  messages:
+    basename: i18m/messages
+
+  datasource:
+    username: ${DB_USERNAME}
+    url: jdbc:postgresql://${DB_HOST}/${DB_NAME}
+    password: ${DB_PASSWORD}
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
     jpa:
       show-sql: true
       hibernate:
         format-sql: true
 
-    flyway:
-      baseline-on-migrate: true
-
-  messages:
-    basename: i18m/messages
+    ##flyway:
+      ##url: jdbc:postgresql://${DB_HOST}
+      #locations: classpath:db
+      #schemas: public
+      #user: ${DB_USERNAME}
+      #password: ${DB_PASSWORD}
+      #baseline-on-migrate: true
