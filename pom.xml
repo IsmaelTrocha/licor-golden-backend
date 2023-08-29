@@ -91,11 +91,6 @@
                             <version>1.5.3.Final</version>
                         </path>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <compilerArg>
-                            -MapStruct.defaultComponentModel=spring
-                        </compilerArg>
-                    </compilerArgs>
                     <source>17</source>
                     <target>17</target>
                 </configuration>
