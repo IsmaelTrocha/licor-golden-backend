@@ -4,7 +4,7 @@ import com.liquorsgolden.lq.application.category.CreateCategoryApplication;
 import com.liquorsgolden.lq.domain.entities.Category;
 import com.liquorsgolden.lq.infrastructure.api.dto.request.CategoryRequest;
 import com.liquorsgolden.lq.infrastructure.api.mapper.request.CategoryRequestMapper;
-import com.liquorsgolden.lq.infrastructure.api.mapper.response.CreateResponse;
+import com.liquorsgolden.lq.infrastructure.api.dto.response.CreateResponse;
 import com.liquorsgolden.lq.shared.exception.code.MessageCode;
 import com.liquorsgolden.lq.shared.utils.MessageUtils;
 import lombok.AllArgsConstructor;

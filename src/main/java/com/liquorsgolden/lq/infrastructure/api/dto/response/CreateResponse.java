@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.api.mapper.response;
+package com.liquorsgolden.lq.infrastructure.api.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

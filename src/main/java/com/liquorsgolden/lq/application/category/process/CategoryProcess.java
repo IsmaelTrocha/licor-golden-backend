@@ -9,8 +9,10 @@ import com.liquorsgolden.lq.shared.exception.message.category.CategoryNotFoundEx
 import com.liquorsgolden.lq.shared.utils.MessageUtils;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
+@Service
 public class CategoryProcess {
 
   private final MessageUtils messageUtils;
