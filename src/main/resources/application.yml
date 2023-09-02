@@ -20,6 +20,7 @@ spring:
       show-sql: true
       hibernate:
         format-sql: true
+        ddl-auto: create
 
     ##flyway:
       ##url: jdbc:postgresql://${DB_HOST}

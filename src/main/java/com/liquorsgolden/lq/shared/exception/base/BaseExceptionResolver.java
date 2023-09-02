@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RequestMapping(MediaType.APPLICATION_JSON_VALUE)
 public class BaseExceptionResolver {
 
-    @ExceptionHandler(BaseException.class)
-    public ResponseEntity<ErrorResponse> errorHandler(BaseException exception) {
-        return new ResponseEntity<>(ErrorResponse.builder()
-                .status(exception.getStatus().value())
-                .code(exception.getCode())
-                .message(exception.getMessage())
-                .date(exception.getDate().toString())
-                .build(),
-                HttpStatus.valueOf(exception.getStatus().value()));
-    }
+  @ExceptionHandler(BaseException.class)
+  public ResponseEntity<ErrorResponse> errorHandler(BaseException exception) {
+    return new ResponseEntity<>(ErrorResponse.builder()
+        .status(exception.getStatus().value())
+        .code(exception.getCode())
+        .message(exception.getMessage())
+        .date(exception.getDate().toString())
+        .build(),
+        HttpStatus.valueOf(exception.getStatus().value()));
+  }
 }

@@ -1,4 +1,5 @@
 package com.liquorsgolden.lq.shared.exception.error;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ErrorResponse {
 
-    private int status;
-    private String code;
-    private String message;
-    private String date;
+  private int status;
+  private String code;
+  private String message;
+  private String date;
 }

@@ -1,16 +1,16 @@
 package com.liquorsgolden.lq.application.category;
 
-import com.liquorsgolden.lq.application.category.process.CategoryProcess;
 import com.liquorsgolden.lq.domain.entities.Category;
+import com.liquorsgolden.lq.domain.services.category.GetCategoryService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class GetCategoryApplication {
 
-  private final CategoryProcess categoryProcess;
+  private final GetCategoryService getCategoryService;
 
   public Category findById(Long id) {
-    return categoryProcess.findById(id);
+    return getCategoryService.findById(id);
   }
 
 }

@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageUtils {
 
-    @Autowired
-    MessageSource messageSource;
+  @Autowired
+  MessageSource messageSource;
 
-    public String getMessage(String message, String... args) {
-        return messageSource.getMessage(message,
-                args, LocaleContextHolder.getLocale());
-    }
+  public String getMessage(String message, String... args) {
+    return messageSource.getMessage(message,
+        args, LocaleContextHolder.getLocale());
+  }
 }
