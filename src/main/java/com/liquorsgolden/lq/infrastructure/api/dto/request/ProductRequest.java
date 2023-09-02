@@ -1,15 +1,19 @@
 package com.liquorsgolden.lq.infrastructure.api.dto.request;
 
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class ProductRequest {
 
   private String name;
   private String description;
+  private String imageUrl;
+  private Double price;
+  private int stock;
+  private String category;
+
 }

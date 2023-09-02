@@ -7,8 +7,8 @@ import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @AllArgsConstructor
+@Service
 public class CreateProductAdapter implements CreateProductService {
 
   private final ProductRepository productRepository;
@@ -18,5 +18,4 @@ public class CreateProductAdapter implements CreateProductService {
   public Product createProduct(Product product) {
     return productDtoMapper.toEntity(productRepository.save(productDtoMapper.toDto(product)));
   }
-
 }

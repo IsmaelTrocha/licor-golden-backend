@@ -7,15 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+
+public class ImageUpload {
 
   private Long id;
   private String name;
-  private String description;
-  private String imageUrl;
-  private String category;
-  private Double price;
-  private int stock;
-  private Boolean status;
-
+  private String resource;
 }

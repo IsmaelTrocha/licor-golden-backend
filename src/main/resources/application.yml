@@ -16,16 +16,16 @@ spring:
     password: ${DB_PASSWORD}
     test-on-borrow: true
     validation-query: SELECT 1 FROM dual
-    jpa:
-      show-sql: true
-      hibernate:
-        format-sql: true
-        ddl-auto: create
-
-    ##flyway:
-      ##url: jdbc:postgresql://${DB_HOST}
-      #locations: classpath:db
-      #schemas: public
-      #user: ${DB_USERNAME}
-      #password: ${DB_PASSWORD}
-      #baseline-on-migrate: true
+    flyway:
+      baselineOnMigrate: true
+      user: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+      schemas: public
+      createSchemas: true
+      locations: db/migration, db/specific/h2
+  jpa:
+    show-sql: true
+    hibernate:
+      format-sql: true
+  flyway:
+    enabled: true
