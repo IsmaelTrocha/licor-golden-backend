@@ -1,6 +1,8 @@
 package com.liquorsgolden.lq.infrastructure.repository.order;
 
+import com.liquorsgolden.lq.infrastructure.repository.address.AddressDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
+import com.liquorsgolden.lq.infrastructure.repository.status.StatusDto;
 import com.liquorsgolden.lq.infrastructure.repository.user.UserDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,8 +35,17 @@ public class OrderDto {
   private ProductDto product;
   @Column(name = "creation_order")
   private LocalDateTime creationOrder;
+  @Column(name = "finish_date")
+  private LocalDateTime finishDate;
+  @Column(name = "delivery_date")
+  private LocalDateTime deliveryDate;
   private int quantity;
   private Double total;
-  private String status;
+  @ManyToOne
+  @JoinColumn(name = "address_id")
+  private AddressDto address;
+  @ManyToOne
+  @JoinColumn(name = "status_id")
+  private StatusDto status;
 
 }

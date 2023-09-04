@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.feingclient;
+package com.liquorsgolden.lq.domain.services.feingclient;
 
 import com.liquorsgolden.lq.domain.entities.ImageUpload;
 import org.springframework.cloud.openfeign.FeignClient;

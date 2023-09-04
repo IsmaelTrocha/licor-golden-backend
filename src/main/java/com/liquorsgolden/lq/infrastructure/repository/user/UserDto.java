@@ -25,9 +25,11 @@ public class UserDto {
   private String lastName;
   private String email;
   private int age;
+  private String phoneNumber;
   private String password;
   private Boolean enabled = false;
   @Column(name = "create_at")
   private LocalDateTime createAt;
   private String role;
+
 }

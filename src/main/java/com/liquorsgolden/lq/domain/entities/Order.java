@@ -11,12 +11,14 @@ import lombok.NoArgsConstructor;
 public class Order {
 
   private Long id;
-  private LocalDateTime creationDate;
-  private Double total;
   private User user;
   private Product product;
+  private LocalDateTime creationOrder;
+  private LocalDateTime finishDate;
+  private LocalDateTime deliveryDate;
   private int quantity;
+  private Double total;
   private Address address;
-  private String status;
+  private Status status;
 
 }
