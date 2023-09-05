@@ -47,10 +47,6 @@ CREATE TABLE ADDRESSES(
   FOREIGN KEY (city_id) REFERENCES CITIES(id)
 );
 
-
-
-
-
 CREATE TABLE ORDERS(
   id bigserial PRIMARY KEY,
   user_id bigserial,
@@ -82,7 +78,6 @@ VALUES ('Tequila', 'Ismael.trocha@hotmail.com', NOW());
 
 INSERT INTO CATEGORY (name, create_by, creation_date)
 VALUES ('Cerveza', 'Ismael.trocha@hotmail.com', NOW());
-
 
 ALTER TABLE PRODUCTS DROP COLUMN category;
 
