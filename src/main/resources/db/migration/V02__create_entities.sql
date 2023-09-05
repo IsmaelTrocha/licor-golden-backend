@@ -21,19 +21,6 @@ CREATE TABLE CITIES(
 
 INSERT INTO CITIES (id, name, country_id) VALUES (1, 'Cartagena', 1);
 
-CREATE TABLE ADDRESSES(
-  id bigserial PRIMARY KEY,
-  street VARCHAR(255) NOT NULL,
-  avenue VARCHAR(255) NOT NULL,
-  city_id bigserial,
-  user_id bigserial,
-  description TEXT NOT NULL,
-  postal_code VARCHAR(255) NOT NULL,
-  state VARCHAR(255) NOT NULL,
-  FOREIGN KEY (city_id) REFERENCES CITIES(id),
-  FOREIGN KEY (user_id) REFERENCES USERS(id)
-);
-
 CREATE TABLE USERS(
   id bigserial PRIMARY KEY,
   first_name VARCHAR(255)  NOT NULL,
@@ -46,6 +33,21 @@ CREATE TABLE USERS(
   enable boolean NOT NULL,
   role varchar(15) NOT NULL
   );
+
+CREATE TABLE ADDRESSES(
+  id bigserial PRIMARY KEY,
+  street VARCHAR(255) NOT NULL,
+  avenue VARCHAR(255) NOT NULL,
+  city_id bigserial,
+  user_id bigserial,
+  description TEXT NOT NULL,
+  postal_code VARCHAR(255) NOT NULL,
+  state VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES USERS(id),
+  FOREIGN KEY (city_id) REFERENCES CITIES(id)
+);
+
+
 
 
 

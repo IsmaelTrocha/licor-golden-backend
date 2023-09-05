@@ -29,6 +29,8 @@ public class ProductDto {
   private String description;
   @Column(name = "image_url")
   private String imageUrl;
+  @ManyToOne
+  @JoinColumn(name = "category_id")
   private CategoryDto category;
   private Double price;
   private int stock;

@@ -11,6 +11,6 @@ import org.mapstruct.MappingConstants.ComponentModel;
 public interface ProductRequestMapper extends EntityToDto<Product, ProductRequest> {
 
 
-  @Mapping(source = "category",target = "category.id")
+  @Mapping(source = "categoryId",target = "category.id")
   Product toEntity(ProductRequest request);
 }
