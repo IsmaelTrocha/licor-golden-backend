@@ -1,9 +1,11 @@
 package com.liquorsgolden.lq.domain.services.product;
 
-import com.liquorsgolden.lq.domain.entities.Product;
+import java.util.List;
 
-public interface GetProductService {
+public interface GetProductService<Product> {
 
-  Product findById(Long id);
+  List<Product> getAllProducts();
+
+  Product getProduct(Long id);
 
 }

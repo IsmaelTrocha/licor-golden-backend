@@ -11,7 +11,7 @@ public class CreateProductApplication {
   private final ProductProcess productProcess;
   private final CreateProductService createProductService;
 
-  public Product createPro(Product product) {
+  public Product createProduct(Product product) {
     productProcess.validateImage(product);
     return createProductService.createProduct(product);
   }

@@ -12,5 +12,6 @@ public interface ProductRequestMapper extends EntityToDto<Product, ProductReques
 
 
   @Mapping(source = "categoryId",target = "category.id")
+
   Product toEntity(ProductRequest request);
 }
