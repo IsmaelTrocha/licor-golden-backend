@@ -5,8 +5,10 @@ import com.liquorsgolden.lq.domain.services.category.CreateCategoryService;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
+import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
+@Service
 public class CreateCategoryApplication {
 
   private final CreateCategoryService createCategoryService;

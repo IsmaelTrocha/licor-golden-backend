@@ -1,14 +1,13 @@
 package com.liquorsgolden.lq.infrastructure.adapter.product;
 
-import com.liquorsgolden.lq.domain.entities.Product;
-import com.liquorsgolden.lq.domain.services.product.DeleteProductService;
+import com.liquorsgolden.lq.domain.services.product.DeleteProductByIdService;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 @AllArgsConstructor
-@Service
-public class DeleteProductAdapter implements DeleteProductService<Product> {
+@Repository
+public class DeleteProductByIdAdapter implements DeleteProductByIdService {
 
   private final ProductRepository productRepository;
 

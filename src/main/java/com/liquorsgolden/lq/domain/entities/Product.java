@@ -11,15 +11,19 @@ import lombok.NoArgsConstructor;
 public class Product {
 
   private Long id;
-  private String name;
+  private String nameProduct;
   private String description;
   private String imageUrl;
-  private Category category;
   private Double price;
   private int stock;
+  //Foreign keys
+  private Category category;
   private Status status;
+
+
+/*
   private LocalDateTime createDate;
   private LocalDateTime updateDate;
   private LocalDateTime hideDate;
-
+*/
 }

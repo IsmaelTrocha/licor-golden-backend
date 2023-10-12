@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.mapper;
+package com.liquorsgolden.lq.infrastructure.repository.category;
 
 import com.liquorsgolden.lq.domain.entities.Category;
 import com.liquorsgolden.lq.infrastructure.repository.category.CategoryDto;

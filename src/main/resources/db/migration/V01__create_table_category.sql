@@ -7,7 +7,7 @@ CREATE TABLE CATEGORY(
 
 CREATE TABLE PRODUCTS(
     id bigserial PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    name_product VARCHAR(255) NOT NULL,
     description TEXT,
     image_url VARCHAR(255),
     stock int,

@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.mapper;
+package com.liquorsgolden.lq.infrastructure.repository.country;
 
 import com.liquorsgolden.lq.domain.entities.Country;
 import com.liquorsgolden.lq.infrastructure.repository.country.CountryDto;

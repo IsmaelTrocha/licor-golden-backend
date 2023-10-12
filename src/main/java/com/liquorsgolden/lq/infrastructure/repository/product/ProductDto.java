@@ -25,18 +25,27 @@ public class ProductDto {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String name;
+
+  @ManyToOne
+  @JoinColumn(name = "category_id", referencedColumnName = "id")
+  private CategoryDto category;
+
+  @ManyToOne
+  @JoinColumn(name = "status_id", referencedColumnName = "id")
+  private StatusDto status;
+
+  @Column(name = "name_product", unique=true)
+  private String nameProduct;
+  @Column(name = "description")
   private String description;
   @Column(name = "image_url")
   private String imageUrl;
-  @ManyToOne
-  @JoinColumn(name = "category_id")
-  private CategoryDto category;
+  @Column(name = "price")
   private Double price;
+  @Column(name = "stock")
   private int stock;
-  @ManyToOne
-  @JoinColumn(name = "status_id")
-  private StatusDto status;
+
+  /*
   @Column(name = "created_date")
   private LocalDateTime createDate;
   @Column(name = "update_date")
@@ -44,4 +53,5 @@ public class ProductDto {
   @Column(name = "hide_date")
   private LocalDateTime hideDate;
   private LocalDateTime expirationDate;
+  */
 }

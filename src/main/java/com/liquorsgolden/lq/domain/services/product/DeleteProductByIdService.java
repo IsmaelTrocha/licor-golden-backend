@@ -1,6 +1,6 @@
 package com.liquorsgolden.lq.domain.services.product;
 
-public interface DeleteProductService<Product> {
+public interface DeleteProductByIdService {
 
   void deleteProduct(Long id);
 }

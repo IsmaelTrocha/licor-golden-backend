@@ -1,31 +1,27 @@
 package com.liquorsgolden.lq.infrastructure.api.controller;
 
 import com.liquorsgolden.lq.application.image.ImageUploadApplication;
-import com.liquorsgolden.lq.application.product.CreateProductApplication;
-import com.liquorsgolden.lq.application.product.DeleteProductApplication;
-import com.liquorsgolden.lq.application.product.GetProductApplication;
-import com.liquorsgolden.lq.application.product.PutProductApplication;
-import com.liquorsgolden.lq.domain.entities.ImageUpload;
+import com.liquorsgolden.lq.application.product.*;
 import com.liquorsgolden.lq.domain.entities.Product;
-import com.liquorsgolden.lq.infrastructure.api.dto.request.ProductRequest;
-import com.liquorsgolden.lq.infrastructure.api.dto.response.CreateResponse;
-import com.liquorsgolden.lq.infrastructure.api.mapper.request.ProductRequestMapper;
-import java.io.IOException;
-import java.util.List;
+import com.liquorsgolden.lq.infrastructure.api.dto.request.product.ProductRequest;
+import com.liquorsgolden.lq.infrastructure.api.dto.request.product.ProductUpdateRequest;
+import com.liquorsgolden.lq.infrastructure.api.dto.response.ImageUploadResponse;
+import com.liquorsgolden.lq.infrastructure.api.dto.response.product.ProductResponse;
+import com.liquorsgolden.lq.infrastructure.api.mapper.request.product.ProductRequestMapper;
+
+import com.liquorsgolden.lq.infrastructure.api.mapper.request.product.ProductUpdateRequestMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.response.ImageUploadResponseMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.response.ProductResponseMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -33,44 +29,56 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductController {
 
   private final CreateProductApplication createProductApplication;
-  private final GetProductApplication getProductApplication;
+  private final GetProductByIdApplication getProductByIdApplication;
   private final ImageUploadApplication imageUploadApplication;
   private final ProductRequestMapper productRequestMapper;
-  private final PutProductApplication putProductApplication;
-  private final DeleteProductApplication deleteProductApplication;
+  private final ProductUpdateApplication productUpdateApplication;
+  private final ProductUpdateRequestMapper productUpdateRequestMapper;
+  private final DeleteProductByIdApplication deleteProductByIdApplication;
+  private final ImageUploadResponseMapper imageUploadResponseMapper;
+  private final ProductResponseMapper productResponseMapper;
+  private final GetAllProductApplication getAllProductApplication;
 
-  @GetMapping
-  public ResponseEntity<List<Product>> getAllProducts() {
-    return ResponseEntity.ok(getProductApplication.getAllProducts());
+  @GetMapping("/list")
+  public ResponseEntity<List<ProductResponse>> getAllProducts() {
+    return new ResponseEntity<>(
+            productResponseMapper.toListDto(getAllProductApplication.getAllProducts()),
+            HttpStatus.OK);
   }
 
   @GetMapping(path = "/{id}")
-  public ResponseEntity<Product> getProduct(@PathVariable("id") Long id) {
-    return ResponseEntity.ok(getProductApplication.getProduct(id));
+  public ResponseEntity<ProductResponse> getProduct(@PathVariable("id") Long id) {
+     return ResponseEntity.ok(productResponseMapper.toDto(
+            getProductByIdApplication.getProduct(id)));
   }
 
-  @PostMapping
-  public ResponseEntity<CreateResponse> createProduct(
-      @RequestPart("product") ProductRequest productRequest,
-      @RequestPart("file") MultipartFile multipartFile) throws IOException {
-    ImageUpload img = imageUploadApplication.imageUpload(multipartFile);
-    String resource = img.getResource();
-    productRequest.setImageUrl(resource);
-    createProductApplication.createProduct(productRequestMapper.toEntity(productRequest));
-    return new ResponseEntity<>(new CreateResponse("201", "Product was created successfully!!"),
-        HttpStatus.CREATED);
+  @PostMapping(path = "/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+  public ResponseEntity<ImageUploadResponse> uploadProductImage(
+          @RequestPart("file") MultipartFile image){
+    return ResponseEntity.ok(imageUploadResponseMapper.toDto(
+            imageUploadApplication.imageUpload(image)));
+  }
+
+  @PostMapping("/create")
+  public ResponseEntity<Long> save(@Valid @RequestBody ProductRequest productRequest) {
+    Product productToUpdate = productRequestMapper.toEntity(productRequest);
+    Product savedProduct = createProductApplication.createProduct(productToUpdate);
+    return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct.getId());
   }
 
 
-  @PutMapping(value = "/updateProduct")
-  public void editProduct(@RequestBody Product product) {
-    putProductApplication.updateProduct(product);
+  @PutMapping("/update")
+  public ResponseEntity<Long> updateProduct(
+          @Valid @RequestBody ProductUpdateRequest productUpdateRequest) {
+    Product updatedProduct = productUpdateApplication.updateProduct(
+            productUpdateRequestMapper.toEntity(productUpdateRequest));
+    return ResponseEntity.status(HttpStatus.OK).body(updatedProduct.getId());
   }
 
-  @Transactional
-  @DeleteMapping(path = "{id}")
-  public void deleteProduct(@PathVariable("id") Long id) {
-    deleteProductApplication.deleteProduct(id);
+  @DeleteMapping("/{id}")
+  public ResponseEntity<String> deleteProduct(@PathVariable long id) {
+    deleteProductByIdApplication.deleteProduct(id);
+    return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
   }
 
 }

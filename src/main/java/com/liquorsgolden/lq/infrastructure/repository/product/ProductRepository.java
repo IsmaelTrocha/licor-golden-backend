@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository extends JpaRepository<ProductDto, Long> {
 
   @Modifying
-  @Query(value="UPDATE ProductDto p SET p.name= :name, p.description= :description, p.price= :price WHERE p.id = :id")
-  void modifyProduct(String name, String description, Double price, Long id);
+  @Query(value="UPDATE ProductDto p SET p.nameProduct= :nameProduct, p.description= :description, p.price= :price WHERE p.id = :id")
+  void modifyProduct(String nameProduct, String description, Double price, Long id);
 }

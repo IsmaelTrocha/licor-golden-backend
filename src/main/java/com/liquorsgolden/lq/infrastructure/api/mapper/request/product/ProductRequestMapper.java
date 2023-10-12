@@ -1,7 +1,7 @@
-package com.liquorsgolden.lq.infrastructure.api.mapper.request;
+package com.liquorsgolden.lq.infrastructure.api.mapper.request.product;
 
 import com.liquorsgolden.lq.domain.entities.Product;
-import com.liquorsgolden.lq.infrastructure.api.dto.request.ProductRequest;
+import com.liquorsgolden.lq.infrastructure.api.dto.request.product.ProductRequest;
 import com.liquorsgolden.lq.shared.mapper.EntityToDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,6 +12,6 @@ public interface ProductRequestMapper extends EntityToDto<Product, ProductReques
 
 
   @Mapping(source = "categoryId",target = "category.id")
-
+  @Mapping(source = "statusId",target = "status.id")
   Product toEntity(ProductRequest request);
 }

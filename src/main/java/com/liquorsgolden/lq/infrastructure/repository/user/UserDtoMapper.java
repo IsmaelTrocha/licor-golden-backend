@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.mapper;
+package com.liquorsgolden.lq.infrastructure.repository.user;
 
 import com.liquorsgolden.lq.domain.entities.User;
 import com.liquorsgolden.lq.infrastructure.repository.user.UserDto;

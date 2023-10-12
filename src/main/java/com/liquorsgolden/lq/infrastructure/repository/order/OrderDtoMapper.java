@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.mapper;
+package com.liquorsgolden.lq.infrastructure.repository.order;
 
 import com.liquorsgolden.lq.domain.entities.Order;
 import com.liquorsgolden.lq.infrastructure.repository.order.OrderDto;

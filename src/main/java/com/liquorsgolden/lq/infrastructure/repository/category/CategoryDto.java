@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "CATEGORIES")
+@Table(name = "CATEGORY")
 @Entity
 @Data
 public class CategoryDto {
