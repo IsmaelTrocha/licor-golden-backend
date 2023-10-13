@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.api.mapper.response;
+package com.liquorsgolden.lq.infrastructure.api.mapper.product.response;
 
 import com.liquorsgolden.lq.domain.entities.Product;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.product.ProductResponse;

@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.api.mapper.response;
+package com.liquorsgolden.lq.infrastructure.api.mapper.image;
 
 import com.liquorsgolden.lq.domain.entities.ImageUpload;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.ImageUploadResponse;

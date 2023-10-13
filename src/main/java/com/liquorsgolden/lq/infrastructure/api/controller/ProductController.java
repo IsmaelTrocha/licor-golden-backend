@@ -7,16 +7,15 @@ import com.liquorsgolden.lq.infrastructure.api.dto.request.product.ProductReques
 import com.liquorsgolden.lq.infrastructure.api.dto.request.product.ProductUpdateRequest;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.ImageUploadResponse;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.product.ProductResponse;
-import com.liquorsgolden.lq.infrastructure.api.mapper.request.product.ProductRequestMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.product.request.ProductRequestMapper;
 
-import com.liquorsgolden.lq.infrastructure.api.mapper.request.product.ProductUpdateRequestMapper;
-import com.liquorsgolden.lq.infrastructure.api.mapper.response.ImageUploadResponseMapper;
-import com.liquorsgolden.lq.infrastructure.api.mapper.response.ProductResponseMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.product.request.ProductUpdateRequestMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.image.ImageUploadResponseMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.product.response.ProductResponseMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

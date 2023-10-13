@@ -2,7 +2,9 @@ package com.liquorsgolden.lq.domain.services.category;
 
 import com.liquorsgolden.lq.domain.entities.Category;
 
-public interface CreateCategoryService {
+import java.util.List;
 
-  Category createCategory(Category category);
+public interface GetAllCategoryService {
+
+    List<Category> getAllCategorys();
 }

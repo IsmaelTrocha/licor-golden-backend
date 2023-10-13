@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.api.mapper.request.product;
+package com.liquorsgolden.lq.infrastructure.api.mapper.product.request;
 
 import com.liquorsgolden.lq.domain.entities.Product;
 import com.liquorsgolden.lq.infrastructure.api.dto.request.product.ProductUpdateRequest;

@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.api.dto.response;
+package com.liquorsgolden.lq.infrastructure.api.dto.response.category;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
