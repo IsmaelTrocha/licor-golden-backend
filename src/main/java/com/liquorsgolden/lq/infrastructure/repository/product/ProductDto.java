@@ -10,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,7 +43,7 @@ public class ProductDto {
   private Double price;
   @Column(name = "stock")
   private int stock;
-
+  private int quantitySold;
   /*
   @Column(name = "created_date")
   private LocalDateTime createDate;

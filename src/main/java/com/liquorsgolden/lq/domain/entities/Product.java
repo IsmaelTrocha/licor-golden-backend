@@ -1,6 +1,6 @@
 package com.liquorsgolden.lq.domain.entities;
 
-import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +16,7 @@ public class Product {
   private String imageUrl;
   private Double price;
   private int stock;
+  private int quantitySold;
   //Foreign keys
   private Category category;
   private Status status;

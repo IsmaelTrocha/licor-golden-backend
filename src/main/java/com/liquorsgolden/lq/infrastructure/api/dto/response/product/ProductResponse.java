@@ -18,6 +18,7 @@ public class ProductResponse {
   //Foreign keys
   private Long categoryId;
   private Long statusId;
+  private int quantitySold;
 
   //private LocalDateTime expirationDate;
 
