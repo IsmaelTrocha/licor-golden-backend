@@ -40,33 +40,6 @@ public class ProductController {
   private final ImageUploadResponseMapper imageUploadResponseMapper;
   private final ProductResponseMapper productResponseMapper;
   private final GetAllProductApplication getAllProductApplication;
-  private final ProductRepository productRepository;
-
-  @GetMapping("/most-selled")
-  public ResponseEntity<List<Product>> getBestSellingProducts() {
-    int minimumQuantity = 20;
-    List<ProductDto> productDtos = productRepository.quantitySold(minimumQuantity);
-
-    List<Product> bestSellingProducts = new ArrayList<>();
-
-    for (ProductDto productDto : productDtos) {
-      // Realiza la conversión de ProductDto a Product manualmente o utilizando un mapeador
-      Product product = new Product();
-      product.setId(productDto.getId());
-      product.setNameProduct(productDto.getNameProduct());
-      product.setDescription(productDto.getDescription());
-      product.setQuantitySold(productDto.getQuantitySold());
-      // Realiza la conversión de otros atributos
-      bestSellingProducts.add(product);
-    }
-
-    if (bestSellingProducts.isEmpty()) {
-      return ResponseEntity.status(HttpStatus.NO_CONTENT).body(bestSellingProducts);
-    } else {
-      return ResponseEntity.ok(bestSellingProducts);
-    }
-  }
-
 
   @GetMapping("/list")
   public ResponseEntity<List<ProductResponse>> getAllProducts() {

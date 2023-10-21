@@ -16,7 +16,6 @@ public class Product {
   private String imageUrl;
   private Double price;
   private int stock;
-  private int quantitySold;
   //Foreign keys
   private Category category;
   private Status status;

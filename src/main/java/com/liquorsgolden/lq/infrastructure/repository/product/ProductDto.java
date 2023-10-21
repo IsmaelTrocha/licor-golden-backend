@@ -43,7 +43,6 @@ public class ProductDto {
   private Double price;
   @Column(name = "stock")
   private int stock;
-  private int quantitySold;
   /*
   @Column(name = "created_date")
   private LocalDateTime createDate;
