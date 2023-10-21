@@ -5,9 +5,7 @@ import com.liquorsgolden.lq.shared.exception.code.ExceptionCode;
 import com.liquorsgolden.lq.shared.exception.message.product.ImageRequiredException;
 import com.liquorsgolden.lq.shared.utils.MessageUtils;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
 @AllArgsConstructor
 public class ProductProcess {
 
