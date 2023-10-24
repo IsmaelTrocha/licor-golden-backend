@@ -13,5 +13,5 @@ public interface ProductUpdateRequestMapper {
     @Mapping(source = "categoryId",target = "category.id")
     @Mapping(source = "statusId",target = "status.id")
     Product toEntity(ProductUpdateRequest productUpdateRequest);
-
+//hola
 }
