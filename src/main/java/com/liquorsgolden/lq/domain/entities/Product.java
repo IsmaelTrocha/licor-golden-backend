@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,14 +18,14 @@ public class Product {
   private String imageUrl;
   private Double price;
   private int stock;
-  //Foreign keys
-  private Category category;
-  private Status status;
-
-
-/*
   private LocalDateTime createDate;
   private LocalDateTime updateDate;
   private LocalDateTime hideDate;
-*/
+  //Foreign keys
+  private Category category;
+  private Status status;
+  private Proportion proportion;
+
+
+
 }
