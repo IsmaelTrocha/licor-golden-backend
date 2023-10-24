@@ -3,6 +3,11 @@ CREATE TABLE STATUS(
     name VARCHAR(255) NOT NULL
  );
 
+CREATE TABLE PROPORTION(
+    id bigserial PRIMARY KEY,
+    quantity VARCHAR(255) NOT NULL
+ );
+
 CREATE TABLE COUNTRIES(
    id bigserial PRIMARY KEY,
    iso VARCHAR(255) NOT NULL,
@@ -64,6 +69,24 @@ CREATE TABLE ORDERS(
   FOREIGN KEY (product_id) REFERENCES PRODUCTS(id)
   );
 
+-- Para 330ml
+INSERT INTO PROPORTION (quantity)
+ VALUES ('330ml');
+
+-- Para 375ml
+INSERT INTO PROPORTION (quantity)
+ VALUES ('375ml');
+
+-- Para 750ml
+INSERT INTO PROPORTION (quantity)
+ VALUES ('750ml');
+
+-- Para 1 Litro
+INSERT INTO PROPORTION (quantity)
+ VALUES ('1 Litro');
+
+
+
 INSERT INTO CATEGORY (name, create_by, creation_date)
 VALUES ('Vodka', 'Ismael.trocha@hotmail.com', NOW());
 
@@ -92,3 +115,7 @@ ALTER TABLE PRODUCTS ADD CONSTRAINT fkproductcategory
 ALTER TABLE PRODUCTS ADD COLUMN status_id bigserial;
 ALTER TABLE PRODUCTS ADD CONSTRAINT fkproductstatus
  FOREIGN KEY (status_id) REFERENCES STATUS(id);
+
+ALTER TABLE PRODUCTS ADD COLUMN proportion_id bigserial;
+ALTER TABLE PRODUCTS ADD CONSTRAINT fkproductproportion
+ FOREIGN KEY (proportion_id) REFERENCES PROPORTION(id);

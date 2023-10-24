@@ -1,5 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.api.dto.request.product;
 
+import com.liquorsgolden.lq.domain.entities.Proportion;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -30,6 +31,15 @@ public class ProductRequest {
   )
   @NotNull(message = "El status no puede ser nulo")
   private Long statusId;
+
+
+  @Schema(name = "proportionId",
+          description = "Solo se aceptan numeros que esten en BD, campo obligatorio",
+          example = "1",
+          type = "Number"
+  )
+  @NotNull(message = "La proporcion no puede ser nulo")
+  private Long proportionId;
 
   @Schema(name = "nameProduct",
           description = "Nombre del producto",
@@ -79,7 +89,5 @@ public class ProductRequest {
   @Positive(message = "El stock del producto debe ser un número positivo")
   private int stock;
 
-    public ProductRequest() {
 
-    }
 }
