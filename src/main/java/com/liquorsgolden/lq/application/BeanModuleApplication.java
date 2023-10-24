@@ -69,4 +69,9 @@ public class BeanModuleApplication {
       GetAllStatusService getAllStatusService){
     return new GetAllStatusApplication(getAllStatusService);
   }
+
+  @Bean
+  public GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication(GetAllProductByCategoryIdService getAllProductByCategoryIdService) {
+    return new GetAllProductByCategoryIdApplication(getAllProductByCategoryIdService);
+  }
 }

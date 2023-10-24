@@ -12,4 +12,6 @@ public interface ProductRepository extends JpaRepository<ProductDto, Long> {
   @Modifying
   @Query(value="UPDATE ProductDto p SET p.nameProduct= :nameProduct, p.description= :description, p.price= :price WHERE p.id = :id")
   void modifyProduct(String nameProduct, String description, Double price, Long id);
+
+  List<ProductDto> findByCategory_IdOrderByIdAsc(Long categoryId);
 }

@@ -79,4 +79,7 @@ public class ProductRequest {
   @Positive(message = "El stock del producto debe ser un número positivo")
   private int stock;
 
+    public ProductRequest() {
+
+    }
 }

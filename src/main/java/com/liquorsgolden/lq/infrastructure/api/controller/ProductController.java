@@ -40,6 +40,16 @@ public class ProductController {
   private final ImageUploadResponseMapper imageUploadResponseMapper;
   private final ProductResponseMapper productResponseMapper;
   private final GetAllProductApplication getAllProductApplication;
+  private final GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication;
+
+
+  @GetMapping("/getByCategory")
+  public ResponseEntity<List<ProductResponse>> getByCategory(
+          @RequestHeader Long categoryId) {
+    return new ResponseEntity<>(productResponseMapper.toListDto(
+            getAllProductByCategoryIdApplication.getProductByCategory(categoryId)), HttpStatus.OK);
+
+  }
 
   @GetMapping("/list")
   public ResponseEntity<List<ProductResponse>> getAllProducts() {
