@@ -4,13 +4,12 @@ import com.liquorsgolden.lq.domain.entities.Product;
 import com.liquorsgolden.lq.domain.services.product.GetAllProductByCategoryIdService;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDtoMapper;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
-@Repository
+@Service
 public class GetAllProductByCategoryIdAdapter implements GetAllProductByCategoryIdService {
 
     private final ProductRepository productRepository;

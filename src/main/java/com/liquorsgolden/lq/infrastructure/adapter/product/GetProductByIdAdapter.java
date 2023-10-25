@@ -5,13 +5,12 @@ import com.liquorsgolden.lq.domain.services.product.GetProductByIdService;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDtoMapper;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
-
 import java.util.Optional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
-@Repository
+@Service
 public class GetProductByIdAdapter implements GetProductByIdService {
 
   private final ProductRepository productRepository;

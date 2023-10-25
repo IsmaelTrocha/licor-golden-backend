@@ -5,11 +5,11 @@ import com.liquorsgolden.lq.domain.services.product.CreateProductService;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDtoMapper;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+
 @AllArgsConstructor
-@Repository
+@Service
 public class CreateProductAdapter implements CreateProductService {
 
   private final ProductRepository productRepository;

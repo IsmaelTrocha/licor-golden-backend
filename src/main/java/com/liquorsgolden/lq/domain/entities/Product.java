@@ -18,6 +18,7 @@ public class Product {
   private String imageUrl;
   private Double price;
   private int stock;
+  private int quantitySold;
   private LocalDateTime createDate;
   private LocalDateTime updateDate;
   private LocalDateTime hideDate;

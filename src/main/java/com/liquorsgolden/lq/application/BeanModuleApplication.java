@@ -45,7 +45,11 @@ public class BeanModuleApplication {
       DeleteProductByIdService deleteProductByIdService) {
     return new DeleteProductByIdApplication(deleteProductByIdService);
   }
-
+  @Bean
+  public GetMostSoldProductApplication getMostSoldProductApplication(
+      GetMostSoldProductService getMostSoldProductService){
+    return new GetMostSoldProductApplication(getMostSoldProductService);
+  }
   @Bean
   public GetAllProductApplication getAllProductById(
       GetAllProductService getAllProductService) {
