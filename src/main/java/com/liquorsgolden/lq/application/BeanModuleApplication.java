@@ -4,10 +4,12 @@ import com.liquorsgolden.lq.application.category.GetAllCategoryApplication;
 import com.liquorsgolden.lq.application.image.ImageUploadApplication;
 import com.liquorsgolden.lq.application.product.*;
 import com.liquorsgolden.lq.application.product.process.ProductProcess;
+import com.liquorsgolden.lq.application.proportion.GetAllProportionApplication;
 import com.liquorsgolden.lq.application.status.GetAllStatusApplication;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
 import com.liquorsgolden.lq.domain.services.image.ImageUploadService;
 import com.liquorsgolden.lq.domain.services.product.*;
+import com.liquorsgolden.lq.domain.services.proportion.GetAllProportionService;
 import com.liquorsgolden.lq.domain.services.status.GetAllStatusService;
 import com.liquorsgolden.lq.shared.utils.MessageUtils;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +17,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanModuleApplication {
+
+  @Bean
+  public GetAllProportionApplication getAllProportionApplication(GetAllProportionService getAllProportionService) {
+    return new GetAllProportionApplication(getAllProportionService);
+  }
+
+  @Bean
+  public GetAllProductByProportionIdApplication getAllProductByProportionIdApplication(GetAllProductByProportionIdService getAllProductByProportionIdService) {
+    return new GetAllProductByProportionIdApplication(getAllProductByProportionIdService);
+  }
 
   @Bean
   public ProductProcess productProcess(

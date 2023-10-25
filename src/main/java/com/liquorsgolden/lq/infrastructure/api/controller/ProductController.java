@@ -41,6 +41,15 @@ public class ProductController {
   private final ProductResponseMapper productResponseMapper;
   private final GetAllProductApplication getAllProductApplication;
   private final GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication;
+  private final GetAllProductByProportionIdApplication getAllProductByProportionIdApplication;
+
+  @GetMapping("/getByProportion")
+  public ResponseEntity<List<ProductResponse>> getByProportion(
+          @RequestHeader Long proportionId) {
+    return new ResponseEntity<>(productResponseMapper.toListDto(
+            getAllProductByProportionIdApplication.getProductByProportion(proportionId)), HttpStatus.OK);
+
+  }
 
 
   @GetMapping("/getByCategory")
