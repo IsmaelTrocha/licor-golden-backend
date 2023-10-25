@@ -64,10 +64,8 @@ public class ProductController {
   }
 
   @GetMapping("/most-sold")
-  public ResponseEntity<List<ProductDto>> getBestSellingProducts() {
-    List<ProductDto> productDtos = getMostSoldProductApplication.getMostSoldProducts();
-
-    return ResponseEntity.ok(productDtos);
+  public ResponseEntity<List<ProductResponse>> getBestSellingProducts() {
+    return new ResponseEntity<>(productResponseMapper.toDto(getMostSoldProductApplication.getMostSoldProducts()), HttpStatus.OK);
     }
 
 
