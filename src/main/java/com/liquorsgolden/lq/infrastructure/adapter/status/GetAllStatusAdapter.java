@@ -23,7 +23,7 @@ public class GetAllStatusAdapter implements GetAllStatusService {
         List<StatusDto> statusDtoList = statusRepository.findAll();
         if (statusDtoList.isEmpty()) {
             throw new StatusNotFoundException(
-                    "No existen categorias registradas en BD");
+                    "No existen estados registrados en BD");
         }
         return statusDtoMapper.toEntity(statusDtoList);
     }

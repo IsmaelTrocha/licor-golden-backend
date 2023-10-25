@@ -13,5 +13,6 @@ public interface ProductRequestMapper extends EntityToDto<Product, ProductReques
 
   @Mapping(source = "categoryId",target = "category.id")
   @Mapping(source = "statusId",target = "status.id")
+  @Mapping(source = "proportionId",target = "proportion.id")
   Product toEntity(ProductRequest request);
 }
