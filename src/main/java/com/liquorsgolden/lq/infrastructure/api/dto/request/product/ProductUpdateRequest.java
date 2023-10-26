@@ -37,6 +37,14 @@ public class ProductUpdateRequest {
     @NotNull(message = "El status no puede ser nulo")
     private Long statusId;
 
+    @Schema(name = "proportionId",
+            description = "Solo se aceptan numeros que esten en BD, campo obligatorio",
+            example = "1",
+            type = "Number"
+    )
+    @NotNull(message = "La proporcion no puede ser nulo")
+    private Long proportionId;
+
     @Schema(name = "nameProduct",
             description = "Nombre del producto",
             accessMode = Schema.AccessMode.READ_WRITE,

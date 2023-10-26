@@ -14,6 +14,7 @@ public interface ProductResponseMapper extends EntityToDto<Product, ProductRespo
 
     @Mapping(source = "category.id", target = "categoryId")
     @Mapping(source = "status.id", target = "statusId")
+    @Mapping(source = "proportion.id", target = "proportionId")
     ProductResponse toDto(Product product);
 
     List<ProductResponse> toListDto(List<Product> products);

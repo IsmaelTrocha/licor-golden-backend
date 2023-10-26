@@ -1,6 +1,7 @@
 package com.liquorsgolden.lq.infrastructure.repository.product;
 
 import com.liquorsgolden.lq.infrastructure.repository.category.CategoryDto;
+import com.liquorsgolden.lq.infrastructure.repository.proportion.ProportionDto;
 import com.liquorsgolden.lq.infrastructure.repository.status.StatusDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +33,10 @@ public class ProductDto {
   @ManyToOne
   @JoinColumn(name = "status_id", referencedColumnName = "id")
   private StatusDto status;
+
+  @ManyToOne
+  @JoinColumn(name = "proportion_id", referencedColumnName = "id")
+  private ProportionDto proportion;
 
   @Column(name = "name_product", unique=true)
   private String nameProduct;

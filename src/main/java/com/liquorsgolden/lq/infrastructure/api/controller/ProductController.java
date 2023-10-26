@@ -5,6 +5,7 @@ import com.liquorsgolden.lq.application.product.CreateProductApplication;
 import com.liquorsgolden.lq.application.product.DeleteProductByIdApplication;
 import com.liquorsgolden.lq.application.product.GetAllProductApplication;
 import com.liquorsgolden.lq.application.product.GetAllProductByCategoryIdApplication;
+import com.liquorsgolden.lq.application.product.GetAllProductByProportionIdApplication;
 import com.liquorsgolden.lq.application.product.GetMostSoldProductApplication;
 import com.liquorsgolden.lq.application.product.GetProductByIdApplication;
 import com.liquorsgolden.lq.application.product.ProductUpdateApplication;
@@ -17,7 +18,6 @@ import com.liquorsgolden.lq.infrastructure.api.mapper.image.ImageUploadResponseM
 import com.liquorsgolden.lq.infrastructure.api.mapper.product.request.ProductRequestMapper;
 import com.liquorsgolden.lq.infrastructure.api.mapper.product.request.ProductUpdateRequestMapper;
 import com.liquorsgolden.lq.infrastructure.api.mapper.product.response.ProductResponseMapper;
-import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -52,6 +52,15 @@ public class ProductController {
   private final ProductResponseMapper productResponseMapper;
   private final GetAllProductApplication getAllProductApplication;
   private final GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication;
+  private final GetAllProductByProportionIdApplication getAllProductByProportionIdApplication;
+
+  @GetMapping("/getByProportion")
+  public ResponseEntity<List<ProductResponse>> getByProportion(
+          @RequestHeader Long proportionId) {
+    return new ResponseEntity<>(productResponseMapper.toListDto(
+            getAllProductByProportionIdApplication.getProductByProportion(proportionId)), HttpStatus.OK);
+
+  }
   private final  GetMostSoldProductApplication getMostSoldProductApplication;
 
 
