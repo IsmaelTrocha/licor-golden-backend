@@ -52,6 +52,8 @@ public class ProductController {
   private final ProductResponseMapper productResponseMapper;
   private final GetAllProductApplication getAllProductApplication;
   private final GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication;
+
+  private final  GetMostSoldProductApplication getMostSoldProductApplication;
   private final GetAllProductByProportionIdApplication getAllProductByProportionIdApplication;
 
   @GetMapping("/getByProportion")
@@ -61,6 +63,7 @@ public class ProductController {
             getAllProductByProportionIdApplication.getProductByProportion(proportionId)), HttpStatus.OK);
 
   }
+
   private final  GetMostSoldProductApplication getMostSoldProductApplication;
 
 

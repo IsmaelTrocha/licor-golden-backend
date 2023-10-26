@@ -14,6 +14,7 @@ public interface ProductRepository extends JpaRepository<ProductDto, Long> {
   void modifyProduct(String nameProduct, String description, Double price, Long id);
 
   List<ProductDto> findByCategory_IdOrderByIdAsc(Long categoryId);
+
   List<ProductDto> findByProportion_IdOrderByIdAsc(Long proportionId);
   @Query("SELECT p FROM ProductDto p WHERE p.quantitySold > 20")
   List<ProductDto> findByQuantitySold();
