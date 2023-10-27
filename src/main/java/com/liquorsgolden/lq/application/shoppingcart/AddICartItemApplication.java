@@ -1,15 +1,15 @@
 package com.liquorsgolden.lq.application.shoppingcart;
 
-import com.liquorsgolden.lq.domain.entities.ShoppingCart;
+import com.liquorsgolden.lq.domain.entities.CartItem;
 import com.liquorsgolden.lq.domain.services.shoppingcart.AddItemShoppingCartService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class AddItemShoppingCartApplication {
+public class AddICartItemApplication {
 
   private final AddItemShoppingCartService addItemShoppingCartService;
 
-  public ShoppingCart addItemShoppingCart(ShoppingCart shoppingCart){
-    return addItemShoppingCartService.addItem(shoppingCart);
+  public CartItem addItemShoppingCart(CartItem cartItem){
+    return addItemShoppingCartService.addItem(cartItem);
   }
 }

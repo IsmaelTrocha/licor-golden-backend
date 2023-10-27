@@ -3,11 +3,11 @@ package com.liquorsgolden.lq.infrastructure.adapter.shoppingcart;
 import com.liquorsgolden.lq.domain.services.shoppingcart.RemoveItemShoppingCartService;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import org.springframework.stereotype.Service;
 
+@Service
 @AllArgsConstructor
-@Data
-public class RemoveItemShoppingCartApplication implements RemoveItemShoppingCartService {
+public class RemoveItemShoppingCartAdapter implements RemoveItemShoppingCartService {
 
   private final ProductRepository productRepository;
 

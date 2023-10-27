@@ -4,7 +4,7 @@ import com.liquorsgolden.lq.domain.services.shoppingcart.RemoveItemShoppingCartS
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class RemoveItemShoppingCartApplication {
+public class RemoveCartItemApplication {
 
     private final RemoveItemShoppingCartService removeItemShoppingCartService;
 
