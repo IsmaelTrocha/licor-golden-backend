@@ -9,8 +9,13 @@ import com.liquorsgolden.lq.application.product.GetAllProductByCategoryIdApplica
 import com.liquorsgolden.lq.application.product.GetAllProductByProportionIdApplication;
 import com.liquorsgolden.lq.application.product.GetProductByIdApplication;
 import com.liquorsgolden.lq.application.product.ProductUpdateApplication;
+import com.liquorsgolden.lq.application.product.UpdateStockProductApplication;
 import com.liquorsgolden.lq.application.product.process.ProductProcess;
 import com.liquorsgolden.lq.application.proportion.GetAllProportionApplication;
+import com.liquorsgolden.lq.application.shoppingcart.AddItemShoppingCartApplication;
+import com.liquorsgolden.lq.application.shoppingcart.GetItemShoppingCartApplication;
+import com.liquorsgolden.lq.application.shoppingcart.RemoveItemShoppingCartApplication;
+import com.liquorsgolden.lq.application.shoppingcart.UpdateQuantityItemCartApplication;
 import com.liquorsgolden.lq.application.status.GetAllStatusApplication;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
 import com.liquorsgolden.lq.domain.services.image.ImageUploadService;
@@ -21,7 +26,12 @@ import com.liquorsgolden.lq.domain.services.product.GetAllProductByProportionIdS
 import com.liquorsgolden.lq.domain.services.product.GetAllProductService;
 import com.liquorsgolden.lq.domain.services.product.GetProductByIdService;
 import com.liquorsgolden.lq.domain.services.product.ProductUpdateService;
+import com.liquorsgolden.lq.domain.services.product.UpdateStockProductService;
 import com.liquorsgolden.lq.domain.services.proportion.GetAllProportionService;
+import com.liquorsgolden.lq.domain.services.shoppingcart.AddItemShoppingCartService;
+import com.liquorsgolden.lq.domain.services.shoppingcart.GetItemShoppingCartService;
+import com.liquorsgolden.lq.domain.services.shoppingcart.RemoveItemShoppingCartService;
+import com.liquorsgolden.lq.domain.services.shoppingcart.UpdateQuantityItemCartService;
 import com.liquorsgolden.lq.domain.services.status.GetAllStatusService;
 import com.liquorsgolden.lq.shared.utils.MessageUtils;
 import org.springframework.context.annotation.Bean;
@@ -31,12 +41,14 @@ import org.springframework.context.annotation.Configuration;
 public class BeanModuleApplication {
 
   @Bean
-  public GetAllProportionApplication getAllProportionApplication(GetAllProportionService getAllProportionService) {
+  public GetAllProportionApplication getAllProportionApplication(
+      GetAllProportionService getAllProportionService) {
     return new GetAllProportionApplication(getAllProportionService);
   }
 
   @Bean
-  public GetAllProductByProportionIdApplication getAllProductByProportionIdApplication(GetAllProductByProportionIdService getAllProductByProportionIdService) {
+  public GetAllProductByProportionIdApplication getAllProductByProportionIdApplication(
+      GetAllProductByProportionIdService getAllProductByProportionIdService) {
     return new GetAllProductByProportionIdApplication(getAllProductByProportionIdService);
   }
 
@@ -60,8 +72,14 @@ public class BeanModuleApplication {
   @Bean
   public CreateProductApplication createProductApplication(
       ProductProcess productProcess,
-      CreateProductService createProductService) {
-    return new CreateProductApplication(productProcess, createProductService);
+      GetProductByIdApplication getProductByIdApplication,
+      CreateProductService createProductService,
+      UpdateStockProductApplication updateStockProductApplication) {
+    return new CreateProductApplication(
+        productProcess,
+        getProductByIdApplication,
+        createProductService,
+        updateStockProductApplication);
   }
 
   @Bean
@@ -90,12 +108,44 @@ public class BeanModuleApplication {
 
   @Bean
   public GetAllStatusApplication getAllStatusApplication(
-      GetAllStatusService getAllStatusService){
+      GetAllStatusService getAllStatusService) {
     return new GetAllStatusApplication(getAllStatusService);
   }
 
   @Bean
-  public GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication(GetAllProductByCategoryIdService getAllProductByCategoryIdService) {
+  public GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication(
+      GetAllProductByCategoryIdService getAllProductByCategoryIdService) {
     return new GetAllProductByCategoryIdApplication(getAllProductByCategoryIdService);
   }
+
+  @Bean
+  public GetItemShoppingCartApplication getItemShoppingCartApplication(
+      GetItemShoppingCartService getItemShoppingCartService) {
+    return new GetItemShoppingCartApplication(getItemShoppingCartService);
+  }
+
+  @Bean
+  public UpdateStockProductApplication updateStockProductApplication(
+      UpdateStockProductService updateStockProductService) {
+    return new UpdateStockProductApplication(updateStockProductService);
+  }
+
+  @Bean
+  public AddItemShoppingCartApplication addItemShoppingCartApplication(
+      AddItemShoppingCartService addItemShoppingCartService) {
+    return new AddItemShoppingCartApplication(addItemShoppingCartService);
+  }
+
+  @Bean
+  public RemoveItemShoppingCartApplication removeItemShoppingCartApplication(
+      RemoveItemShoppingCartService removeItemShoppingCartService) {
+    return new RemoveItemShoppingCartApplication(removeItemShoppingCartService);
+  }
+
+  @Bean
+  public UpdateQuantityItemCartApplication updateQuantityItemCartApplication(
+      UpdateQuantityItemCartService updateQuantityItemCartService) {
+    return new UpdateQuantityItemCartApplication(updateQuantityItemCartService);
+  }
+
 }

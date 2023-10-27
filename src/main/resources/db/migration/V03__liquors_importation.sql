@@ -51,6 +51,14 @@ CREATE TABLE LIQUOR_IMPORTATION (
     FOREIGN KEY (supplier_id) REFERENCES SUPPLIER(id)
 );
 
+
+CREATE TABLE SHOPPING_CART(
+  id bigserial PRIMARY KEY,
+
+
+);
+
+
 INSERT INTO STATUS (name) VALUES ('Pendiente');
 INSERT INTO STATUS (name) VALUES ('En progreso');
 INSERT INTO STATUS (name) VALUES ('Completo');
