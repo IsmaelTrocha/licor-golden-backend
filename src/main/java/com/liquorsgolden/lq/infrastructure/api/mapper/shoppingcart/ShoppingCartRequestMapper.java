@@ -1,6 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.api.mapper.shoppingcart;
 
-import com.liquorsgolden.lq.domain.entities.ShoppingCart;
+import com.liquorsgolden.lq.domain.entities.CartItem;
 import com.liquorsgolden.lq.infrastructure.api.dto.request.shoppingcart.ShoppingCartRequest;
 import com.liquorsgolden.lq.infrastructure.api.mapper.customer.CustomerRequestMapper;
 import com.liquorsgolden.lq.infrastructure.api.mapper.product.request.ProductRequestMapper;
@@ -13,6 +13,6 @@ import org.mapstruct.MappingConstants.ComponentModel;
     CustomerRequestMapper.class,
     ProductRequestMapper.class
 },injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface ShoppingCartRequestMapper extends EntityToDto<ShoppingCart, ShoppingCartRequest> {
+public interface ShoppingCartRequestMapper extends EntityToDto<CartItem, ShoppingCartRequest> {
 
 }

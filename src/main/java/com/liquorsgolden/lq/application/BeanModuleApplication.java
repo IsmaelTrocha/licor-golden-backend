@@ -12,10 +12,10 @@ import com.liquorsgolden.lq.application.product.ProductUpdateApplication;
 import com.liquorsgolden.lq.application.product.UpdateStockProductApplication;
 import com.liquorsgolden.lq.application.product.process.ProductProcess;
 import com.liquorsgolden.lq.application.proportion.GetAllProportionApplication;
-import com.liquorsgolden.lq.application.shoppingcart.AddItemShoppingCartApplication;
-import com.liquorsgolden.lq.application.shoppingcart.GetItemShoppingCartApplication;
-import com.liquorsgolden.lq.application.shoppingcart.RemoveItemShoppingCartApplication;
-import com.liquorsgolden.lq.application.shoppingcart.UpdateQuantityItemCartApplication;
+import com.liquorsgolden.lq.application.shoppingcart.AddICartItemApplication;
+import com.liquorsgolden.lq.application.shoppingcart.GetCartItemApplication;
+import com.liquorsgolden.lq.application.shoppingcart.RemoveCartItemApplication;
+import com.liquorsgolden.lq.application.shoppingcart.UpdateQuantityCartItemApplication;
 import com.liquorsgolden.lq.application.status.GetAllStatusApplication;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
 import com.liquorsgolden.lq.domain.services.image.ImageUploadService;
@@ -119,9 +119,9 @@ public class BeanModuleApplication {
   }
 
   @Bean
-  public GetItemShoppingCartApplication getItemShoppingCartApplication(
+  public GetCartItemApplication getItemShoppingCartApplication(
       GetItemShoppingCartService getItemShoppingCartService) {
-    return new GetItemShoppingCartApplication(getItemShoppingCartService);
+    return new GetCartItemApplication(getItemShoppingCartService);
   }
 
   @Bean
@@ -131,21 +131,21 @@ public class BeanModuleApplication {
   }
 
   @Bean
-  public AddItemShoppingCartApplication addItemShoppingCartApplication(
+  public AddICartItemApplication addItemShoppingCartApplication(
       AddItemShoppingCartService addItemShoppingCartService) {
-    return new AddItemShoppingCartApplication(addItemShoppingCartService);
+    return new AddICartItemApplication(addItemShoppingCartService);
   }
 
   @Bean
-  public RemoveItemShoppingCartApplication removeItemShoppingCartApplication(
+  public RemoveCartItemApplication removeItemShoppingCartApplication(
       RemoveItemShoppingCartService removeItemShoppingCartService) {
-    return new RemoveItemShoppingCartApplication(removeItemShoppingCartService);
+    return new RemoveCartItemApplication(removeItemShoppingCartService);
   }
 
   @Bean
-  public UpdateQuantityItemCartApplication updateQuantityItemCartApplication(
+  public UpdateQuantityCartItemApplication updateQuantityItemCartApplication(
       UpdateQuantityItemCartService updateQuantityItemCartService) {
-    return new UpdateQuantityItemCartApplication(updateQuantityItemCartService);
+    return new UpdateQuantityCartItemApplication(updateQuantityItemCartService);
   }
 
 }
