@@ -30,6 +30,5 @@ public class CartDto {
   private CustomerDto customer;
   @OneToMany(mappedBy = "cart")
   private List<CartItemDto> cartItems;
-  @ManyToOne
-  private ProductDto product;
+
 }

@@ -29,6 +29,7 @@ public class CartItemDto {
   @ManyToOne
   private CustomerDto customer;
   @ManyToOne
+  @JoinColumn(name = "product_id")
   private ProductDto product;
   private int quantity;
   @Column(name = "insertion_date")
