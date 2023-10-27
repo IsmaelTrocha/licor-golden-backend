@@ -1,9 +1,9 @@
 package com.liquorsgolden.lq.infrastructure.adapter.shoppingcart;
 
-import com.liquorsgolden.lq.domain.entities.ShoppingCart;
+import com.liquorsgolden.lq.domain.entities.CartItem;
 import com.liquorsgolden.lq.domain.services.shoppingcart.AddItemShoppingCartService;
-import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.ShoppingCartDtoMapper;
-import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.ShoppingCartRepository;
+import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem.CartItemDtoMapper;
+import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem.CartItemRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AddItemShoppingCartAdapter implements AddItemShoppingCartService {
 
-  private final ShoppingCartDtoMapper shoppingCartDtoMapper;
-  private final ShoppingCartRepository shoppingCartRepository;
+  private final CartItemDtoMapper cartItemDtoMapper;
+  private final CartItemRepository cartItemRepository;
 
   @Override
-  public ShoppingCart addItem(ShoppingCart shoppingCart) {
-    return shoppingCartDtoMapper.toEntity(
-        shoppingCartRepository.save(shoppingCartDtoMapper.toDto(shoppingCart)));
+  public CartItem addItem(CartItem cartItem) {
+    return cartItemDtoMapper.toEntity(
+        cartItemRepository.save(cartItemDtoMapper.toDto(cartItem)));
   }
 }

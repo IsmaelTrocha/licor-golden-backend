@@ -4,7 +4,7 @@ import com.liquorsgolden.lq.domain.services.shoppingcart.UpdateQuantityItemCartS
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class UpdateQuantityItemCartApplication {
+public class UpdateQuantityCartItemApplication {
 
   private final UpdateQuantityItemCartService updateQuantityItemCartService;
 

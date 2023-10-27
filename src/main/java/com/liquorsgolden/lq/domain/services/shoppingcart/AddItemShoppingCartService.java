@@ -1,9 +1,9 @@
 package com.liquorsgolden.lq.domain.services.shoppingcart;
 
-import com.liquorsgolden.lq.domain.entities.ShoppingCart;
+import com.liquorsgolden.lq.domain.entities.CartItem;
 
 public interface AddItemShoppingCartService {
 
-  ShoppingCart addItem(ShoppingCart shoppingCart);
+  CartItem addItem(CartItem cartItem);
 
 }

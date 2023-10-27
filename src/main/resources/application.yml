@@ -27,6 +27,7 @@ spring:
     show-sql: true
     hibernate:
       format-sql: true
+
   flyway:
     enabled: true
 
