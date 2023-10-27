@@ -27,7 +27,7 @@ public class CustomerDto {
   private int age;
   private String phoneNumber;
   private String password;
-  private Boolean enabled = false;
+  private Boolean enable = false;
   @Column(name = "create_at")
   private LocalDateTime createAt;
   private String role;

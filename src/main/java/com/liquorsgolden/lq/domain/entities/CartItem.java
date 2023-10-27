@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShoppingCart {
+public class CartItem {
 
   private Long id;
-  private Customer customer;
   private Product product;
   private int quantity;
   private LocalDateTime insertionDate;
