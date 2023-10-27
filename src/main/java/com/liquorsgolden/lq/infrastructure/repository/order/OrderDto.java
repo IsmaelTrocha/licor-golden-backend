@@ -3,7 +3,7 @@ package com.liquorsgolden.lq.infrastructure.repository.order;
 import com.liquorsgolden.lq.infrastructure.repository.address.AddressDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.status.StatusDto;
-import com.liquorsgolden.lq.infrastructure.repository.user.UserDto;
+import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,7 +29,7 @@ public class OrderDto {
   private Long id;
   @ManyToOne
   @JoinColumn(name = "user_id")
-  private UserDto user;
+  private CustomerDto user;
   @ManyToOne
   @JoinColumn(name = "product_id")
   private ProductDto product;
