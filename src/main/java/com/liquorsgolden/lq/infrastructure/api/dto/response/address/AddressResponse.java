@@ -17,5 +17,6 @@ public class AddressResponse {
   private String description;
   private CityResponse city;
   private String postalCode;
+  private CustomerResponse customer;
 
 }
