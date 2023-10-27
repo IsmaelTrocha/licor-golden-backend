@@ -1,5 +1,6 @@
 package com.liquorsgolden.lq.domain.entities;
 
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,14 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Address {
+public class ShoppingCart {
 
   private Long id;
-  private String street;
-  private String avenue;
-  private String description;
-  private City city;
-  private String postalCode;
   private Customer customer;
+  private Product product;
+  private int quantity;
+  private LocalDateTime insertionDate;
+  private LocalDateTime updateDate;
 
 }
