@@ -1,7 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.repository.status;
 
 import com.liquorsgolden.lq.domain.entities.Status;
-import com.liquorsgolden.lq.infrastructure.repository.category.CategoryDtoMapper;
 import com.liquorsgolden.lq.shared.mapper.EntityToDto;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;

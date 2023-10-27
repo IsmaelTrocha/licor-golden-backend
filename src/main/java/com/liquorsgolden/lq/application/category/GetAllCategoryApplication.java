@@ -2,9 +2,8 @@ package com.liquorsgolden.lq.application.category;
 
 import com.liquorsgolden.lq.domain.entities.Category;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
-import lombok.AllArgsConstructor;
-
 import java.util.List;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class GetAllCategoryApplication {
