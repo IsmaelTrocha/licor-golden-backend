@@ -1,7 +1,7 @@
 package com.liquorsgolden.lq.infrastructure.adapter.shoppingcart;
 
 import com.liquorsgolden.lq.domain.services.shoppingcart.UpdateQuantityItemCartService;
-import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.ShoppingCartRepository;
+import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem.CartItemRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class UpdateQuantityItemCartAdapter implements UpdateQuantityItemCartService {
 
-  private final ShoppingCartRepository shoppingCartRepository;
+  private final CartItemRepository cartItemRepository;
 
   @Override
   public void updateQuantity(int quantity, Long id) {
-  shoppingCartRepository.updateShoppingCartQuantity(quantity,id);
+  cartItemRepository.updateShoppingCartQuantity(quantity,id);
   }
 }
