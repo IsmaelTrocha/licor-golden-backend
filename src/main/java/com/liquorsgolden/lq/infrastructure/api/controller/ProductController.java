@@ -69,7 +69,6 @@ public class ProductController {
           @RequestHeader Long categoryId) {
     return new ResponseEntity<>(productResponseMapper.toListDto(
             getAllProductByCategoryIdApplication.getProductByCategory(categoryId)), HttpStatus.OK);
-
   }
 
   @GetMapping("/most-sold")
