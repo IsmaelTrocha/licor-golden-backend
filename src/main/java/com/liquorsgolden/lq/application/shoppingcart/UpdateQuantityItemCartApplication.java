@@ -7,4 +7,8 @@ import lombok.AllArgsConstructor;
 public class UpdateQuantityItemCartApplication {
 
   private final UpdateQuantityItemCartService updateQuantityItemCartService;
+
+  public void updateQuantityItemCartService(int quantity, Long id) {
+    updateQuantityItemCartService.updateQuantity(quantity, id);
+  }
 }

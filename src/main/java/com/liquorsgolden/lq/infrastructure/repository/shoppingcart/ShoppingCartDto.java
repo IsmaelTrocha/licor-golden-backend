@@ -4,6 +4,9 @@ import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
@@ -18,6 +21,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "shopping_cart")
 public class ShoppingCartDto {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @OneToOne
   private CustomerDto customer;
