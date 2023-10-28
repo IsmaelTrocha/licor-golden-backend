@@ -1,6 +1,8 @@
 package com.liquorsgolden.lq.domain.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +14,7 @@ public class Order {
 
   private Long id;
   private User user;
-  private Product product;
+  private List<Product> products;
   private LocalDateTime creationOrder;
   private LocalDateTime finishDate;
   private LocalDateTime deliveryDate;
