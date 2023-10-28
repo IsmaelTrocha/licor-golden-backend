@@ -1,5 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cart.CartDto;
 import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
@@ -20,13 +21,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "cart")
+@Table(name = "CART_ITEM")
 public class CartItemDto {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @ManyToOne
+  @JoinColumn(name = "customer_id")
   private CustomerDto customer;
   @ManyToOne
   @JoinColumn(name = "product_id")
@@ -37,5 +39,6 @@ public class CartItemDto {
   @Column(name = "update_date")
   private LocalDateTime updateDate;
   @ManyToOne
+  @JsonBackReference
   private CartDto cart;
 }
