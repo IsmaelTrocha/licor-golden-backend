@@ -57,7 +57,7 @@ CREATE TABLE Cart (
     FOREIGN KEY (customer_id) REFERENCES USERS(id)
 );
 
-CREATE TABLE CartItem (
+CREATE TABLE Cart_Item (
     id bigserial PRIMARY KEY,
     product_id bigserial,
     cart_id bigserial,
@@ -93,3 +93,15 @@ VALUES(3, 'Vino', '100 años', 'asdasd', 100, '2023-10-26 14:11:50.217', 5000.00
 INSERT INTO public.users
 (id, first_name, last_name, email, "password", age, phone_number, create_at, "enable", "role")
 VALUES(1, 'Ismael', 'Trocha', 'ismaeltrocha@gmail.com', '020', 20, '3008571063', '2023-10-27 16:10:22.170', true, 'ADMIN');
+
+insert into cart (customer_id) values(1);
+
+INSERT INTO cart_item
+(id, product_id, cart_id, quantity)
+VALUES(1, 1, 1, 11);
+INSERT INTO cart_item
+(id, product_id, cart_id, quantity)
+VALUES(2, 2, 1, 21);
+INSERT INTO cart_item
+(id, product_id, cart_id, quantity)
+VALUES(3, 3, 1, 3);

@@ -17,17 +17,17 @@ spring:
     test-on-borrow: true
     validation-query: SELECT 1 FROM dual
     flyway:
-      baselineOnMigrate: true
+      baselineOnMigrate: false
       user: ${DB_USERNAME}
       password: ${DB_PASSWORD}
       schemas: public
-      createSchemas: true
+      createSchemas: false
       locations: db/migration, db/specific/h2
   jpa:
     show-sql: true
     hibernate:
       format-sql: true
-
+      ddl-auto: update
   flyway:
     enabled: true
 
