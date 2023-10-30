@@ -1,8 +1,6 @@
-package com.liquorsgolden.lq.infrastructure.repository.address;
+package com.liquorsgolden.lq.infrastructure.repository.cart;
 
-import com.liquorsgolden.lq.infrastructure.repository.city.CityDto;
 import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,26 +12,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Table(name = "CART")
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "ADDRESSES")
-public class AddressDto {
+@Data
+public class CartDto {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String street;
-  private String avenue;
-  private String description;
-  @ManyToOne
-  @JoinColumn(name = "city_id")
-  private CityDto city;
-  @Column(name = "postal_code")
-  private String postalCode;
   @ManyToOne
   @JoinColumn(name = "customer_id")
   private CustomerDto customer;
-
 }
