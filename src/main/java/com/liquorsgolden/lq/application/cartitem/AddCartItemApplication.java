@@ -23,6 +23,7 @@ public class AddCartItemApplication {
     if (Objects.isNull(cart)) {
       throw new RuntimeException("That cart does not exist");
     }
+
     if (Objects.isNull(product)) {
       throw new RuntimeException("That product does not exist");
     }
