@@ -1,6 +1,11 @@
 package com.liquorsgolden.lq.application;
 
+import com.liquorsgolden.lq.application.address.GetAddressApplication;
+import com.liquorsgolden.lq.application.cart.AddShoppingCartApplication;
+import com.liquorsgolden.lq.application.cart.GetShoppingCartByIdApplication;
+import com.liquorsgolden.lq.application.cartitem.AddCartItemApplication;
 import com.liquorsgolden.lq.application.category.GetAllCategoryApplication;
+import com.liquorsgolden.lq.application.customer.GetCustomerByIdApplication;
 import com.liquorsgolden.lq.application.image.ImageUploadApplication;
 import com.liquorsgolden.lq.application.product.CreateProductApplication;
 import com.liquorsgolden.lq.application.product.DeleteProductByIdApplication;
@@ -12,11 +17,12 @@ import com.liquorsgolden.lq.application.product.ProductUpdateApplication;
 import com.liquorsgolden.lq.application.product.UpdateStockProductApplication;
 import com.liquorsgolden.lq.application.product.process.ProductProcess;
 import com.liquorsgolden.lq.application.proportion.GetAllProportionApplication;
-import com.liquorsgolden.lq.application.shoppingcart.AddICartItemApplication;
-import com.liquorsgolden.lq.application.shoppingcart.GetCartItemApplication;
-import com.liquorsgolden.lq.application.shoppingcart.RemoveCartItemApplication;
-import com.liquorsgolden.lq.application.shoppingcart.UpdateQuantityCartItemApplication;
 import com.liquorsgolden.lq.application.status.GetAllStatusApplication;
+import com.liquorsgolden.lq.domain.services.GetCustomerByIdService;
+import com.liquorsgolden.lq.domain.services.address.GetAddressService;
+import com.liquorsgolden.lq.domain.services.cart.AddShoppingCartService;
+import com.liquorsgolden.lq.domain.services.cart.GetShoppingCartByIdService;
+import com.liquorsgolden.lq.domain.services.cartitem.AddCartItemService;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
 import com.liquorsgolden.lq.domain.services.image.ImageUploadService;
 import com.liquorsgolden.lq.domain.services.product.CreateProductService;
@@ -28,10 +34,6 @@ import com.liquorsgolden.lq.domain.services.product.GetProductByIdService;
 import com.liquorsgolden.lq.domain.services.product.ProductUpdateService;
 import com.liquorsgolden.lq.domain.services.product.UpdateStockProductService;
 import com.liquorsgolden.lq.domain.services.proportion.GetAllProportionService;
-import com.liquorsgolden.lq.domain.services.shoppingcart.AddItemShoppingCartService;
-import com.liquorsgolden.lq.domain.services.shoppingcart.GetItemShoppingCartService;
-import com.liquorsgolden.lq.domain.services.shoppingcart.RemoveItemShoppingCartService;
-import com.liquorsgolden.lq.domain.services.shoppingcart.UpdateQuantityItemCartService;
 import com.liquorsgolden.lq.domain.services.status.GetAllStatusService;
 import com.liquorsgolden.lq.shared.utils.MessageUtils;
 import org.springframework.context.annotation.Bean;
@@ -118,11 +120,7 @@ public class BeanModuleApplication {
     return new GetAllProductByCategoryIdApplication(getAllProductByCategoryIdService);
   }
 
-  @Bean
-  public GetCartItemApplication getItemShoppingCartApplication(
-      GetItemShoppingCartService getItemShoppingCartService) {
-    return new GetCartItemApplication(getItemShoppingCartService);
-  }
+
 
   @Bean
   public UpdateStockProductApplication updateStockProductApplication(
@@ -131,21 +129,40 @@ public class BeanModuleApplication {
   }
 
   @Bean
-  public AddICartItemApplication addItemShoppingCartApplication(
-      AddItemShoppingCartService addItemShoppingCartService) {
-    return new AddICartItemApplication(addItemShoppingCartService);
+  public AddShoppingCartApplication addItemShoppingCartApplication(
+      AddShoppingCartService addShoppingCartService,
+      GetCustomerByIdApplication getCustomerByIdApplication) {
+    return new AddShoppingCartApplication(
+        addShoppingCartService,
+        getCustomerByIdApplication);
   }
 
   @Bean
-  public RemoveCartItemApplication removeItemShoppingCartApplication(
-      RemoveItemShoppingCartService removeItemShoppingCartService) {
-    return new RemoveCartItemApplication(removeItemShoppingCartService);
+  public AddCartItemApplication addCartItemApplication(
+      AddCartItemService addCartItemService,
+      GetShoppingCartByIdApplication cartByIdApplication,
+      GetProductByIdApplication getProductByIdApplication) {
+    return new AddCartItemApplication(
+        addCartItemService,
+        cartByIdApplication,
+        getProductByIdApplication);
   }
 
   @Bean
-  public UpdateQuantityCartItemApplication updateQuantityItemCartApplication(
-      UpdateQuantityItemCartService updateQuantityItemCartService) {
-    return new UpdateQuantityCartItemApplication(updateQuantityItemCartService);
+  public GetShoppingCartByIdApplication cartByIdApplication(
+      GetShoppingCartByIdService getShoppingCartByIdService) {
+    return new GetShoppingCartByIdApplication(getShoppingCartByIdService);
   }
 
+  @Bean
+  public GetCustomerByIdApplication getCustomerByIdApplication(
+      GetCustomerByIdService getCustomerByIdService) {
+    return new GetCustomerByIdApplication(getCustomerByIdService);
+  }
+
+  @Bean
+  public GetAddressApplication getAddressApplication(
+      GetAddressService getAddressService) {
+    return new GetAddressApplication(getAddressService);
+  }
 }

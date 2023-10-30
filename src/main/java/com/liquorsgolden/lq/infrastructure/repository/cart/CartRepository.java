@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cart;
+package com.liquorsgolden.lq.infrastructure.repository.cart;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

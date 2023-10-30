@@ -15,5 +15,6 @@ public class CartItem {
   private int quantity;
   private LocalDateTime insertionDate;
   private LocalDateTime updateDate;
+  private Cart cart;
 
 }

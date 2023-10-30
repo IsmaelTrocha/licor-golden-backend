@@ -1,6 +1,6 @@
-package com.liquorsgolden.lq.application.shoppingcart;
+package com.liquorsgolden.lq.application.cartitem;
 
-import com.liquorsgolden.lq.domain.services.shoppingcart.UpdateQuantityItemCartService;
+import com.liquorsgolden.lq.domain.services.cartitem.UpdateQuantityItemCartService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

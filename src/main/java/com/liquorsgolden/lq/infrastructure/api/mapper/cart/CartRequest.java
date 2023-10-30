@@ -1,16 +1,13 @@
-package com.liquorsgolden.lq.domain.entities;
+package com.liquorsgolden.lq.infrastructure.api.mapper.cart;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
+@Data
 @NoArgsConstructor
-public class Cart {
+public class CartRequest {
 
-  private Long id;
-  private Customer customer;
-
-
+  private Long customerId;
 }
