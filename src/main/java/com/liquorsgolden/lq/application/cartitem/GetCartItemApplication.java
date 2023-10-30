@@ -1,7 +1,7 @@
-package com.liquorsgolden.lq.application.shoppingcart;
+package com.liquorsgolden.lq.application.cartitem;
 
 import com.liquorsgolden.lq.domain.entities.CartItem;
-import com.liquorsgolden.lq.domain.services.shoppingcart.GetItemShoppingCartService;
+import com.liquorsgolden.lq.domain.services.cartitem.GetItemShoppingCartService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 

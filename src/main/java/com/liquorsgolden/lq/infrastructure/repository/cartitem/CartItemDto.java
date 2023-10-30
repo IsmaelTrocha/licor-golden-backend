@@ -1,9 +1,7 @@
-package com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem;
+package com.liquorsgolden.lq.infrastructure.repository.cartitem;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.liquorsgolden.lq.infrastructure.repository.cart.CartDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
-import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cart.CartDto;
-import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,9 +26,6 @@ public class CartItemDto {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @ManyToOne
-  @JoinColumn(name = "customer_id")
-  private CustomerDto customer;
-  @ManyToOne
   @JoinColumn(name = "product_id")
   private ProductDto product;
   private int quantity;
@@ -39,6 +34,6 @@ public class CartItemDto {
   @Column(name = "update_date")
   private LocalDateTime updateDate;
   @ManyToOne
-  @JsonBackReference
+  @JoinColumn(name = "cart_id")
   private CartDto cart;
 }

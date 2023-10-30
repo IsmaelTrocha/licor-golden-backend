@@ -1,29 +1,27 @@
 package com.liquorsgolden.lq.infrastructure.api.controller;
 
-import com.liquorsgolden.lq.application.shoppingcart.AddICartItemApplication;
-import com.liquorsgolden.lq.application.shoppingcart.GetCartItemApplication;
-import com.liquorsgolden.lq.application.shoppingcart.UpdateQuantityCartItemApplication;
-import com.liquorsgolden.lq.infrastructure.adapter.shoppingcart.RemoveItemShoppingCartAdapter;
-import com.liquorsgolden.lq.infrastructure.api.mapper.shoppingcart.ShoppingCartRequestMapper;
-import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem.CartItemRepository;
-import com.liquorsgolden.lq.infrastructure.repository.user.CustomerRepository;
-import com.liquorsgolden.lq.shared.utils.MessageUtils;
+import com.liquorsgolden.lq.application.cartitem.AddCartItemApplication;
+import com.liquorsgolden.lq.infrastructure.api.dto.request.cartitem.CartItemRequest;
+import com.liquorsgolden.lq.infrastructure.api.mapper.cartitem.CartItemRequestMapper;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/cart-item")
+@RequestMapping(path = "/cart-items")
 @AllArgsConstructor
 public class CartItemController {
 
-  private final AddICartItemApplication addICartItemApplication;
-  private final GetCartItemApplication getCartItemApplication;
-  private final RemoveItemShoppingCartAdapter removeItemShoppingCartAdapter;
-  private final UpdateQuantityCartItemApplication updateQuantityCartItemApplication;
-  private final ShoppingCartRequestMapper shoppingCartRequestMapper;
-  private final MessageUtils messageUtils;
-  private final CartItemRepository cartItemRepository;
-  private final CustomerRepository customerRepository;
+  private final AddCartItemApplication addCartItemApplication;
+  private final CartItemRequestMapper cartItemRequestMapper;
 
+  @PostMapping
+  public ResponseEntity<String> addCartItem(@RequestBody CartItemRequest cartItemRequest) {
+    addCartItemApplication.addCartItem(cartItemRequestMapper.toEntity(cartItemRequest));
+    return new ResponseEntity<>("Item added to the car successfully.", HttpStatus.CREATED);
+  }
 }
