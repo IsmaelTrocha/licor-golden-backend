@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.domain.services.shoppingcart;
+package com.liquorsgolden.lq.domain.services.cartitem;
 
 public interface UpdateQuantityItemCartService {
 

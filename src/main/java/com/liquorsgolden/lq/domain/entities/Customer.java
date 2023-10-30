@@ -1,6 +1,7 @@
 package com.liquorsgolden.lq.domain.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class Customer {
   private String lastName;
   private String email;
   private int age;
-  private Address address;
+  private List<Address> address;
   private String password;
   private Boolean enabled = false;
   private LocalDateTime create_at;
