@@ -4,6 +4,8 @@ import com.liquorsgolden.lq.application.proportion.GetAllProportionApplication;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.proportion.ProportionResponse;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.status.StatusResponse;
 import com.liquorsgolden.lq.infrastructure.api.mapper.proportion.ProportionResponseMapper;
+import com.liquorsgolden.lq.infrastructure.api.mapper.proportion.ProportionResponseMapper;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

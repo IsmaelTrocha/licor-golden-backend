@@ -1,7 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.repository.city;
 
 import com.liquorsgolden.lq.domain.entities.City;
-import com.liquorsgolden.lq.infrastructure.repository.city.CityDto;
 import com.liquorsgolden.lq.infrastructure.repository.country.CountryDtoMapper;
 import com.liquorsgolden.lq.shared.mapper.EntityToDto;
 import org.mapstruct.InjectionStrategy;

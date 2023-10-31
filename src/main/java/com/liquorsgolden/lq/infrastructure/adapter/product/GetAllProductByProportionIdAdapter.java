@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import java.util.List;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Repository;
+
 @AllArgsConstructor
 @Repository
 public class GetAllProductByProportionIdAdapter implements GetAllProductByProportionIdService {

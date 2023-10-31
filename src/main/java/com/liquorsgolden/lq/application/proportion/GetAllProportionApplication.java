@@ -7,6 +7,10 @@ import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+import com.liquorsgolden.lq.domain.services.proportion.GetAllProportionService;
+import java.util.List;
+import lombok.AllArgsConstructor;
+
 @AllArgsConstructor
 public class GetAllProportionApplication {
 

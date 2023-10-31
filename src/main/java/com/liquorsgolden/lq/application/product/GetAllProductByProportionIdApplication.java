@@ -5,6 +5,8 @@ import com.liquorsgolden.lq.domain.services.product.GetAllProductByProportionIdS
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+import java.util.List;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class GetAllProductByProportionIdApplication {

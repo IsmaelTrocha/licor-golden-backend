@@ -6,10 +6,9 @@ import com.liquorsgolden.lq.infrastructure.repository.category.CategoryDto;
 import com.liquorsgolden.lq.infrastructure.repository.category.CategoryDtoMapper;
 import com.liquorsgolden.lq.infrastructure.repository.category.CategoryRepository;
 import com.liquorsgolden.lq.shared.exception.message.category.CategoryNotFoundException;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 @AllArgsConstructor
 @Repository
 public class GetAllCategoryAdapter implements GetAllCategoryService {
