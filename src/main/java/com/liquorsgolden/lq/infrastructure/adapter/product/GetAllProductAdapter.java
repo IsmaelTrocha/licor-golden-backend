@@ -7,7 +7,11 @@ import com.liquorsgolden.lq.infrastructure.repository.product.ProductDtoMapper;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
 import java.util.List;
 import lombok.AllArgsConstructor;
+
 import org.springframework.stereotype.Service;
+
+import org.springframework.stereotype.Repository;
+
 
 @AllArgsConstructor
 @Service

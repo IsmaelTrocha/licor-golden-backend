@@ -15,6 +15,6 @@ public class Address {
   private String description;
   private City city;
   private String postalCode;
-  private User user;
+  private Customer customer;
 
 }

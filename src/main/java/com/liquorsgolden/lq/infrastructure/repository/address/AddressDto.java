@@ -1,7 +1,7 @@
 package com.liquorsgolden.lq.infrastructure.repository.address;
 
 import com.liquorsgolden.lq.infrastructure.repository.city.CityDto;
-import com.liquorsgolden.lq.infrastructure.repository.user.UserDto;
+import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,7 +33,7 @@ public class AddressDto {
   @Column(name = "postal_code")
   private String postalCode;
   @ManyToOne
-  @JoinColumn(name = "user_id")
-  private UserDto user;
+  @JoinColumn(name = "customer_id")
+  private CustomerDto customer;
 
 }

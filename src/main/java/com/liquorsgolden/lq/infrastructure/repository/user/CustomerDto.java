@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "USERS")
 @Entity
 @Data
-public class UserDto {
+public class CustomerDto {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class UserDto {
   private int age;
   private String phoneNumber;
   private String password;
-  private Boolean enabled = false;
+  private Boolean enable = false;
   @Column(name = "create_at")
   private LocalDateTime createAt;
   private String role;

@@ -5,13 +5,10 @@ import com.liquorsgolden.lq.domain.services.proportion.GetAllProportionService;
 import com.liquorsgolden.lq.infrastructure.repository.proportion.ProportionDto;
 import com.liquorsgolden.lq.infrastructure.repository.proportion.ProportionDtoMapper;
 import com.liquorsgolden.lq.infrastructure.repository.proportion.ProportionRepository;
-import com.liquorsgolden.lq.infrastructure.repository.status.StatusDto;
 import com.liquorsgolden.lq.shared.exception.message.proportion.ProportionNotFoundException;
-import com.liquorsgolden.lq.shared.exception.message.status.StatusNotFoundException;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @AllArgsConstructor
 @Repository
