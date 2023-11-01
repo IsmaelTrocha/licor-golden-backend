@@ -2,12 +2,14 @@ package com.liquorsgolden.lq.application;
 
 import com.liquorsgolden.lq.application.category.GetAllCategoryApplication;
 import com.liquorsgolden.lq.application.image.ImageUploadApplication;
+import com.liquorsgolden.lq.application.order.CreateOrderApplication;
 import com.liquorsgolden.lq.application.product.*;
 import com.liquorsgolden.lq.application.product.process.ProductProcess;
 import com.liquorsgolden.lq.application.proportion.GetAllProportionApplication;
 import com.liquorsgolden.lq.application.status.GetAllStatusApplication;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
 import com.liquorsgolden.lq.domain.services.image.ImageUploadService;
+import com.liquorsgolden.lq.domain.services.order.CreateOrderService;
 import com.liquorsgolden.lq.domain.services.product.*;
 import com.liquorsgolden.lq.domain.services.proportion.GetAllProportionService;
 import com.liquorsgolden.lq.domain.services.status.GetAllStatusService;
@@ -17,6 +19,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanModuleApplication {
+
+  @Bean
+  public CreateOrderApplication createOrderApplication(CreateOrderService createOrderService) {
+    return new CreateOrderApplication(createOrderService);
+  }
 
   @Bean
   public GetAllProportionApplication getAllProportionApplication(GetAllProportionService getAllProportionService) {

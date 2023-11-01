@@ -27,7 +27,7 @@ public class OrderController {
     public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
         Order orderToUpdate = orderRequestMapper.toEntity(orderRequest);
         Order savedOrder = createOrderApplication.createOrder(orderToUpdate);
-        // Suponiendo que la entidad Order tiene campos id, userId y total
+
         OrderResponse response = new OrderResponse(
                 savedOrder.getId(),
                 savedOrder.getUser().getId(),

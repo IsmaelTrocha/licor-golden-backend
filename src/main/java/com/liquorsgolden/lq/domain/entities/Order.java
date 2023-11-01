@@ -14,7 +14,7 @@ public class Order {
 
   private Long id;
   private User user;
-  private List<Product> products;
+  private List<Long> productIds;
   private LocalDateTime creationOrder;
   private LocalDateTime finishDate;
   private LocalDateTime deliveryDate;

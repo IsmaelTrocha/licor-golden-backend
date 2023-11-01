@@ -9,9 +9,9 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface OrderRequestMapper {
 
-    @Mapping(source = "userId",target = "user.id")
-    @Mapping(source = "statusId",target = "status.id")
+    @Mapping(source = "userId", target = "user.id")
+    @Mapping(source = "statusId", target = "status.id")
+    @Mapping(source = "addressId", target = "address.id")
+    @Mapping(source = "products", target = "productIds") // Mapear a "productIds" en lugar de "products"
     Order toEntity(OrderRequest orderRequest);
 }
-
-

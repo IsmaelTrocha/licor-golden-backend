@@ -51,12 +51,11 @@ CREATE TABLE ADDRESSES(
   FOREIGN KEY (user_id) REFERENCES USERS(id),
   FOREIGN KEY (city_id) REFERENCES CITIES(id)
 );
-
-CREATE TABLE ORDERS(
+-- Crear la tabla ORDERS
+CREATE TABLE ORDERS (
   id bigserial PRIMARY KEY,
   user_id bigserial,
   address_id bigserial,
-  product_id bigserial,
   quantity INT NOT NULL,
   total_price decimal(10,3) NOT NULL,
   creation_date TIMESTAMP,
@@ -65,9 +64,17 @@ CREATE TABLE ORDERS(
   status_id bigserial,
   FOREIGN KEY (user_id) REFERENCES USERS(id),
   FOREIGN KEY (address_id) REFERENCES ADDRESSES(id),
-  FOREIGN KEY (status_id) REFERENCES STATUS(id),
+  FOREIGN KEY (status_id) REFERENCES STATUS(id)
+);
+
+-- Crear la tabla de unión para relacionar ORDERS con PRODUCTS
+CREATE TABLE ORDER_PRODUCTS (
+  order_id bigserial,
+  product_id bigserial,
+  FOREIGN KEY (order_id) REFERENCES ORDERS(id),
   FOREIGN KEY (product_id) REFERENCES PRODUCTS(id)
-  );
+);
+
 
 -- Para 330ml
 INSERT INTO PROPORTION (quantity)
