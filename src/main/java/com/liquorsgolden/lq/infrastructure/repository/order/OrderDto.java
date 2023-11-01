@@ -3,14 +3,6 @@ package com.liquorsgolden.lq.infrastructure.repository.order;
 import com.liquorsgolden.lq.infrastructure.repository.address.AddressDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.status.StatusDto;
-import com.liquorsgolden.lq.infrastructure.repository.user.UserDto;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,13 +10,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.List; // Importa List
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,8 +32,8 @@ public class OrderDto {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "user_id")
-  private UserDto user;
+  @JoinColumn(name = "customer_id")
+  private CustomerDto user;
 
   @ManyToMany // Cambia a @ManyToMany para tener una lista de productos
   @JoinTable(
@@ -49,8 +43,6 @@ public class OrderDto {
   )
   private List<ProductDto> products; // Cambia a una lista de ProductDto
 
-  @Column(name = "creation_date")
-  private CustomerDto user;
   @ManyToOne
   @JoinColumn(name = "product_id")
   private ProductDto product;

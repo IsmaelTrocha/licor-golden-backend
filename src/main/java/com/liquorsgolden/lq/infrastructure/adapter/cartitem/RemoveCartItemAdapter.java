@@ -1,4 +1,4 @@
-package com.liquorsgolden.lq.infrastructure.adapter.shoppingcart;
+package com.liquorsgolden.lq.infrastructure.adapter.cartitem;
 
 import com.liquorsgolden.lq.domain.services.shoppingcart.RemoveItemShoppingCartService;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductRepository;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class RemoveItemShoppingCartAdapter implements RemoveItemShoppingCartService {
+public class RemoveCartItemAdapter implements RemoveItemShoppingCartService {
 
   private final ProductRepository productRepository;
 
