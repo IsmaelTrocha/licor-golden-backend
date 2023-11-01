@@ -24,25 +24,7 @@ public class CreateOrderAdapter implements CreateOrderService {
 
     @Override
     public Order createOrder(Order order) {
-        double total = 0.0; // Inicializar el total en 0
-        for (Long productId : order.getProductIds()) {
-            Product product = getProductByIdService.getProduct(productId);
-            if (product == null) {
-                // Manejar el caso donde el producto no existe
-                // Puedes lanzar una excepción, registrar un error, etc.
-                // Por ejemplo:
-                throw new ProductNotFoundException("Producto no encontrado: " + productId);
-            }
 
-            int orderedQuantity = product.getQuantity();
-            int currentStock = product.getStock();
-            product.setStock(currentStock - orderedQuantity);
-            productUpdateService.updateProduct(product);
-            // Sumar el precio del producto al total
-            total += (product.getPrice() * orderedQuantity);
-        }
-        order.setTotal(total); // Establecer el total en la orden
-        order.setCreationOrder(LocalDateTime.now());
         return orderDtoMapper.toEntity(orderRepository.save(orderDtoMapper.toDto(order)));
     }
 }

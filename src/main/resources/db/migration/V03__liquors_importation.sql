@@ -51,13 +51,13 @@ CREATE TABLE LIQUOR_IMPORTATION (
     FOREIGN KEY (supplier_id) REFERENCES SUPPLIER(id)
 );
 
-CREATE TABLE Cart (
+CREATE TABLE CART (
     id bigserial PRIMARY KEY,
     customer_id INT,
     FOREIGN KEY (customer_id) REFERENCES USERS(id)
 );
 
-CREATE TABLE Cart_Item (
+CREATE TABLE CART_ITEM (
     id bigserial PRIMARY KEY,
     product_id bigserial,
     cart_id bigserial,
