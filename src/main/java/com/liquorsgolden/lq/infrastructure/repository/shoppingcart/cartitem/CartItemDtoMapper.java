@@ -1,3 +1,4 @@
+
 package com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem;
 
 import com.liquorsgolden.lq.domain.entities.CartItem;
