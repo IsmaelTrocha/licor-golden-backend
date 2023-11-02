@@ -11,7 +11,7 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface OrderResponseMapper {
 
-    @Mapping(source = "user.id", target = "userId")
+    @Mapping(source = "customer.id", target = "userId")
     @Mapping(source = "status.id", target = "statusId")
     OrderResponse toDto(Order order);
 }

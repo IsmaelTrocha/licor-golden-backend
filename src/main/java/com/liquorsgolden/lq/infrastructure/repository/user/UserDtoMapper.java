@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants.ComponentModel;
 
 @Mapper(componentModel = ComponentModel.SPRING)
-public interface UserDtoMapper extends EntityToDto<Customer, UserDto> {
+public interface UserDtoMapper extends EntityToDto<Customer, CustomerDto> {
 
 }

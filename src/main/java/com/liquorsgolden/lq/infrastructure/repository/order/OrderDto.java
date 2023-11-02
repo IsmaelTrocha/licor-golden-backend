@@ -3,7 +3,7 @@ package com.liquorsgolden.lq.infrastructure.repository.order;
 import com.liquorsgolden.lq.infrastructure.repository.address.AddressDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.status.StatusDto;
-import com.liquorsgolden.lq.infrastructure.repository.user.UserDto;
+import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -24,7 +24,7 @@ public class OrderDto {
 
   @ManyToOne
   @JoinColumn(name = "user_id")
-  private UserDto user;
+  private CustomerDto user;
 
   @ManyToMany // Cambia a @ManyToMany para tener una lista de productos
   @JoinTable(
