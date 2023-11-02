@@ -28,12 +28,7 @@ public class OrderController {
         Order orderToUpdate = orderRequestMapper.toEntity(orderRequest);
         Order savedOrder = createOrderApplication.createOrder(orderToUpdate);
 
-        OrderResponse response = new OrderResponse(
-                savedOrder.getId(),
-                savedOrder.getCustomer().getId(),
-                savedOrder.getTotal()
-        );
 
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(new OrderResponse(), HttpStatus.CREATED);
     }
 }

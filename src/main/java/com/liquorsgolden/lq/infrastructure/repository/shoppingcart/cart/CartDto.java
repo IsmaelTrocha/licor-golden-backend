@@ -1,7 +1,7 @@
 package com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cart;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem.CartItemDto;
+import com.liquorsgolden.lq.infrastructure.repository.cartitem.CartItemDto;
 import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

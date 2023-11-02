@@ -1,5 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.repository.shoppingcart.cartitem;
 
+import com.liquorsgolden.lq.infrastructure.repository.cartitem.CartItemDto;
 import com.liquorsgolden.lq.infrastructure.repository.product.ProductDto;
 import com.liquorsgolden.lq.infrastructure.repository.user.CustomerDto;
 import jakarta.transaction.Transactional;
