@@ -13,4 +13,8 @@ public class GetProductByIdApplication {
   public Product getProduct (Long id){
     return getProductByIdService.getProduct(id);
   }
+
+  public Product getProductByName(String name){
+    return getProductByIdService.getProductByName(name);
+  }
 }

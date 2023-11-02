@@ -4,11 +4,12 @@ import com.liquorsgolden.lq.application.address.GetAddressApplication;
 import com.liquorsgolden.lq.application.cart.AddShoppingCartApplication;
 import com.liquorsgolden.lq.application.cart.GetShoppingCartByIdApplication;
 import com.liquorsgolden.lq.application.cartitem.AddCartItemApplication;
+import com.liquorsgolden.lq.application.cartitem.RemoveCartItemApplication;
+import com.liquorsgolden.lq.application.cartitem.UpdateQuantityCartItemApplication;
 import com.liquorsgolden.lq.application.category.GetAllCategoryApplication;
 import com.liquorsgolden.lq.application.customer.GetCustomerByIdApplication;
 import com.liquorsgolden.lq.application.image.ImageUploadApplication;
 import com.liquorsgolden.lq.application.order.CreateOrderApplication;
-import com.liquorsgolden.lq.application.product.*;
 import com.liquorsgolden.lq.application.product.CreateProductApplication;
 import com.liquorsgolden.lq.application.product.DeleteProductByIdApplication;
 import com.liquorsgolden.lq.application.product.GetAllProductApplication;
@@ -25,10 +26,11 @@ import com.liquorsgolden.lq.domain.services.address.GetAddressService;
 import com.liquorsgolden.lq.domain.services.cart.AddShoppingCartService;
 import com.liquorsgolden.lq.domain.services.cart.GetShoppingCartByIdService;
 import com.liquorsgolden.lq.domain.services.cartitem.AddCartItemService;
+import com.liquorsgolden.lq.domain.services.cartitem.RemoveCartItemService;
+import com.liquorsgolden.lq.domain.services.cartitem.UpdateQuantityCartItemService;
 import com.liquorsgolden.lq.domain.services.category.GetAllCategoryService;
 import com.liquorsgolden.lq.domain.services.image.ImageUploadService;
 import com.liquorsgolden.lq.domain.services.order.CreateOrderService;
-import com.liquorsgolden.lq.domain.services.product.*;
 import com.liquorsgolden.lq.domain.services.product.CreateProductService;
 import com.liquorsgolden.lq.domain.services.product.DeleteProductByIdService;
 import com.liquorsgolden.lq.domain.services.product.GetAllProductByCategoryIdService;
@@ -173,5 +175,17 @@ public class BeanModuleApplication {
   public GetAddressApplication getAddressApplication(
       GetAddressService getAddressService) {
     return new GetAddressApplication(getAddressService);
+  }
+
+  @Bean
+  public RemoveCartItemApplication removeCartItemApplication(
+      RemoveCartItemService removeCartItemService) {
+    return new RemoveCartItemApplication(removeCartItemService);
+  }
+
+  @Bean
+  public UpdateQuantityCartItemApplication updateQuantityCartItemApplication(
+      UpdateQuantityCartItemService updateQuantityCartItemService) {
+    return new UpdateQuantityCartItemApplication(updateQuantityCartItemService);
   }
 }

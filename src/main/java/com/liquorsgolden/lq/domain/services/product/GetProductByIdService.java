@@ -7,4 +7,5 @@ public interface GetProductByIdService {
   Product getProduct(Long id);
 
 
+  Product getProductByName(String name);
 }

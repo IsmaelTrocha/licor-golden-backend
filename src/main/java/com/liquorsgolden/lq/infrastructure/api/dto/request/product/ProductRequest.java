@@ -63,7 +63,7 @@ public class ProductRequest {
           description = "la imageUrl debe venir del front. Este campo es obligatorio.",
           accessMode = Schema.AccessMode.READ_WRITE
   )
-  @NotBlank(message = "La URL del imageUrl es obligatorio, debe pesar max 5mb.")
+
   private String imageUrl;
 
   @Schema(name = "price",
