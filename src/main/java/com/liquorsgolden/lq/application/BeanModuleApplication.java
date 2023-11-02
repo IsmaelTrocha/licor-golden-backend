@@ -132,7 +132,6 @@ public class BeanModuleApplication {
   }
 
 
-
   @Bean
   public UpdateStockProductApplication updateStockProductApplication(
       UpdateStockProductService updateStockProductService) {
