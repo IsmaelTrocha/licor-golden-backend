@@ -25,6 +25,15 @@ public class OrderController {
 
     @PostMapping("/create")
     public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
-        return new ResponseEntity<>(new OrderResponse(), HttpStatus.CREATED);
+        Order orderToUpdate = orderRequestMapper.toEntity(orderRequest);
+        Order savedOrder = createOrderApplication.createOrder(orderToUpdate);
+
+        OrderResponse response = new OrderResponse(
+                savedOrder.getId(),
+                savedOrder.getCustomer().getId(),
+                savedOrder.getTotal()
+        );
+
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }
