@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class StatusController {
 
-    private final GetAllStatusApplication getAllStatusApplication;
-    private final StatusResponseMapper statusResponseMapper;
+  private final GetAllStatusApplication getAllStatusApplication;
+  private final StatusResponseMapper statusResponseMapper;
 
-    @GetMapping("/list")
-    public ResponseEntity<List<StatusResponse>> getAllStatus() {
-        return new ResponseEntity<>(
-                statusResponseMapper.toDto(getAllStatusApplication.getAllStatus()),
-                HttpStatus.OK);
-    }
+  @GetMapping("/list")
+  public ResponseEntity<List<StatusResponse>> getAllStatus() {
+    return new ResponseEntity<>(
+        statusResponseMapper.toDto(getAllStatusApplication.getAllStatus()),
+        HttpStatus.OK);
+  }
 }

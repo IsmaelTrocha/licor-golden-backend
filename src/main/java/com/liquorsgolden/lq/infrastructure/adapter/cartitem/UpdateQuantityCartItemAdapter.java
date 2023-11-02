@@ -13,6 +13,6 @@ public class UpdateQuantityCartItemAdapter implements UpdateQuantityCartItemServ
 
   @Override
   public void updateQuantity(int quantity, Long id) {
-  cartItemRepository.updateShoppingCartQuantity(quantity,id);
+    cartItemRepository.updateShoppingCartQuantity(quantity, id);
   }
 }

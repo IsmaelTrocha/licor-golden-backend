@@ -10,5 +10,5 @@ import org.mapstruct.MappingConstants;
 public interface OrderResponseMapper extends EntityToDto<Order, OrderResponse> {
 
 
-    OrderResponse toDto(Order order);
+  OrderResponse toDto(Order order);
 }

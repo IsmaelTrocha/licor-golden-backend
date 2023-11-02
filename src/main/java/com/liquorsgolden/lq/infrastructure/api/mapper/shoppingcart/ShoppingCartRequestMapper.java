@@ -9,10 +9,10 @@ import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants.ComponentModel;
 
-@Mapper(componentModel = ComponentModel.SPRING,uses = {
+@Mapper(componentModel = ComponentModel.SPRING, uses = {
     CustomerRequestMapper.class,
     ProductRequestMapper.class
-},injectionStrategy = InjectionStrategy.CONSTRUCTOR)
+}, injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface ShoppingCartRequestMapper extends EntityToDto<CartItem, ShoppingCartRequest> {
 
 }

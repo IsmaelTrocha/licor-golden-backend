@@ -13,6 +13,7 @@ public class ProductUpdateAdapterUpdate implements ProductUpdateService {
 
   private final ProductRepository productRepository;
   private final ProductDtoMapper productDtoMapper;
+
   @Override
   public Product updateProduct(Product product) {
     return productDtoMapper.toEntity(productRepository.save(productDtoMapper.toDto(product)));

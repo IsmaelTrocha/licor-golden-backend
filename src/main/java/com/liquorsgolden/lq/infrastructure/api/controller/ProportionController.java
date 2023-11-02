@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 public class ProportionController {
 
-    private final GetAllProportionApplication getAllProportionApplication;
-    private final ProportionResponseMapper proportionResponseMapper;
+  private final GetAllProportionApplication getAllProportionApplication;
+  private final ProportionResponseMapper proportionResponseMapper;
 
-    @GetMapping("/list")
-    public ResponseEntity<List<ProportionResponse>> getAllProportion() {
-        return new ResponseEntity<>(
-                proportionResponseMapper.toDto(getAllProportionApplication.getAllProportion()),
-                HttpStatus.OK);
-    }
+  @GetMapping("/list")
+  public ResponseEntity<List<ProportionResponse>> getAllProportion() {
+    return new ResponseEntity<>(
+        proportionResponseMapper.toDto(getAllProportionApplication.getAllProportion()),
+        HttpStatus.OK);
+  }
 }

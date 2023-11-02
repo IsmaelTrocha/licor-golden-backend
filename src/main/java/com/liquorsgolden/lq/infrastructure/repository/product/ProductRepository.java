@@ -10,15 +10,17 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductDto, Long> {
+
   @Modifying
-  @Query(value="UPDATE ProductDto p SET p.nameProduct= :nameProduct, p.description= :description, p.price= :price WHERE p.id = :id")
+  @Query(value = "UPDATE ProductDto p SET p.nameProduct= :nameProduct, p.description= :description, p.price= :price WHERE p.id = :id")
   void modifyProduct(String nameProduct, String description, Double price, Long id);
 
   @Modifying
-  @Query(value="UPDATE ProductDto p SET p.stock = :stock WHERE p.nameProduct = :nameProduct")
+  @Query(value = "UPDATE ProductDto p SET p.stock = :stock WHERE p.nameProduct = :nameProduct")
   void updateStockProduct(int stock, String nameProduct);
 
   List<ProductDto> findByCategory_IdOrderByIdAsc(Long categoryId);
+
   List<ProductDto> findByProportion_IdOrderByIdAsc(Long proportionId);
 
   Optional<ProductDto> findByNameProduct(String name);

@@ -14,6 +14,6 @@ public class UpdateStockProductAdapter implements UpdateStockProductService {
 
   @Override
   public void updateStockProduct(int stock, String id) {
-  productRepository.updateStockProduct(stock, id);
+    productRepository.updateStockProduct(stock, id);
   }
 }

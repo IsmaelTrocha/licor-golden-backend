@@ -63,48 +63,48 @@ public class ProductController {
 
   @GetMapping("/getByProportion")
   public ResponseEntity<List<ProductResponse>> getByProportion(
-          @RequestHeader Long proportionId) {
+      @RequestHeader Long proportionId) {
     return new ResponseEntity<>(productResponseMapper.toListDto(
-            getAllProductByProportionIdApplication.getProductByProportion(proportionId)), HttpStatus.OK);
+        getAllProductByProportionIdApplication.getProductByProportion(proportionId)),
+        HttpStatus.OK);
 
   }
 
 
   @GetMapping("/getByCategory")
   public ResponseEntity<List<ProductResponse>> getByCategory(
-          @RequestHeader Long categoryId) {
+      @RequestHeader Long categoryId) {
     return new ResponseEntity<>(productResponseMapper.toListDto(
-            getAllProductByCategoryIdApplication.getProductByCategory(categoryId)), HttpStatus.OK);
+        getAllProductByCategoryIdApplication.getProductByCategory(categoryId)), HttpStatus.OK);
 
   }
 
   @GetMapping("/list")
   public ResponseEntity<List<ProductResponse>> getAllProducts() {
     return new ResponseEntity<>(
-            productResponseMapper.toListDto(getAllProductApplication.getAllProducts()),
-            HttpStatus.OK);
+        productResponseMapper.toListDto(getAllProductApplication.getAllProducts()),
+        HttpStatus.OK);
   }
 
   @GetMapping(path = "/{id}")
   public ResponseEntity<ProductResponse> getProduct(@PathVariable("id") Long id) {
-     return ResponseEntity.ok(productResponseMapper.toDto(
-            getProductByIdApplication.getProduct(id)));
+    return ResponseEntity.ok(productResponseMapper.toDto(
+        getProductByIdApplication.getProduct(id)));
   }
 
   @PostMapping(path = "/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
   public ResponseEntity<ImageUploadResponse> uploadProductImage(
-          @RequestPart("file") MultipartFile image){
+      @RequestPart("file") MultipartFile image) {
     return ResponseEntity.ok(imageUploadResponseMapper.toDto(
-            imageUploadApplication.imageUpload(image)));
+        imageUploadApplication.imageUpload(image)));
   }
-
 
 
   @PutMapping("/update")
   public ResponseEntity<Long> updateProduct(
-          @Valid @RequestBody ProductUpdateRequest productUpdateRequest) {
+      @Valid @RequestBody ProductUpdateRequest productUpdateRequest) {
     Product updatedProduct = productUpdateApplication.updateProduct(
-            productUpdateRequestMapper.toEntity(productUpdateRequest));
+        productUpdateRequestMapper.toEntity(productUpdateRequest));
     return ResponseEntity.status(HttpStatus.OK).body(updatedProduct.getId());
   }
 

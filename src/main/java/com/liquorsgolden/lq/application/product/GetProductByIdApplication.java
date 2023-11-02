@@ -10,11 +10,11 @@ public class GetProductByIdApplication {
 
   private final GetProductByIdService getProductByIdService;
 
-  public Product getProduct (Long id){
+  public Product getProduct(Long id) {
     return getProductByIdService.getProduct(id);
   }
 
-  public Product getProductByName(String name){
+  public Product getProductByName(String name) {
     return getProductByIdService.getProductByName(name);
   }
 }

@@ -13,16 +13,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderResponse {
 
-    private Long id;
-    private CustomerResponse customer;
-    private List<Product> products;
-    private LocalDateTime creationOrder;
-   // private LocalDateTime finishDate;
-   // private LocalDateTime deliveryDate;
-    private int quantity;
-    private Double total;
-//    private Long addressId;
-    private Long statusId;
+  private Long id;
+  private CustomerResponse customer;
+  private List<Product> products;
+  private LocalDateTime creationOrder;
+  // private LocalDateTime finishDate;
+  // private LocalDateTime deliveryDate;
+  private int quantity;
+  private Double total;
+  //    private Long addressId;
+  private Long statusId;
 
 
 }

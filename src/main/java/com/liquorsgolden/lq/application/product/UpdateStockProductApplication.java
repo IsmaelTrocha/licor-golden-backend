@@ -8,7 +8,7 @@ public class UpdateStockProductApplication {
 
   private final UpdateStockProductService updateStockProductService;
 
-  public void updateStockProduct(int stock , String nameProduct){
+  public void updateStockProduct(int stock, String nameProduct) {
     updateStockProductService.updateStockProduct(stock, nameProduct);
   }
 }

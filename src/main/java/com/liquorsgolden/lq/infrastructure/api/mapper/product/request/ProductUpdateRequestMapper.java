@@ -9,9 +9,9 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ProductUpdateRequestMapper {
 
-    @Mapping(source = "productId", target = "id")
-    @Mapping(source = "categoryId",target = "category.id")
-    @Mapping(source = "statusId",target = "status.id")
-    @Mapping(source = "proportionId",target = "proportion.id")
-    Product toEntity(ProductUpdateRequest productUpdateRequest);
+  @Mapping(source = "productId", target = "id")
+  @Mapping(source = "categoryId", target = "category.id")
+  @Mapping(source = "statusId", target = "status.id")
+  @Mapping(source = "proportionId", target = "proportion.id")
+  Product toEntity(ProductUpdateRequest productUpdateRequest);
 }

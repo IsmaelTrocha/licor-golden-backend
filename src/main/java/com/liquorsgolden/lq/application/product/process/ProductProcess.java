@@ -13,7 +13,8 @@ public class ProductProcess {
 
   public void validateImage(Product product) {
     if (product.getImageUrl() == null || product.getImageUrl().isEmpty()) {
-      throw new ImageRequiredException(messageUtils.getMessage(ExceptionCode.IMAGE_REQUIRED.getType()));
+      throw new ImageRequiredException(
+          messageUtils.getMessage(ExceptionCode.IMAGE_REQUIRED.getType()));
     }
   }
 

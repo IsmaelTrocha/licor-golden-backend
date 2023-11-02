@@ -10,9 +10,9 @@ public class ImageUploadApplication {
 
   private final ImageUploadService uploadService;
 
-  public ImageUpload imageUpload(MultipartFile uploadFile){
+  public ImageUpload imageUpload(MultipartFile uploadFile) {
 
-      return uploadService.upload(uploadFile);
+    return uploadService.upload(uploadFile);
   }
 
 }
