@@ -1,6 +1,7 @@
 package com.liquorsgolden.lq.infrastructure.api.controller;
 
 import com.liquorsgolden.lq.application.order.CreateOrderApplication;
+import com.liquorsgolden.lq.domain.entities.Order;
 import com.liquorsgolden.lq.infrastructure.api.dto.request.order.OrderRequest;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.order.OrderResponse;
 import com.liquorsgolden.lq.infrastructure.api.mapper.order.OrderRequestMapper;
