@@ -1,9 +1,6 @@
 package com.liquorsgolden.lq.infrastructure.api.dto.response.order;
 
-import com.liquorsgolden.lq.domain.entities.Address;
 import com.liquorsgolden.lq.domain.entities.Product;
-import com.liquorsgolden.lq.domain.entities.Status;
-import com.liquorsgolden.lq.domain.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

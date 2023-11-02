@@ -1,20 +1,18 @@
 package com.liquorsgolden.lq.domain.entities;
 
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Address {
+@Data
+
+public class Cart {
 
   private Long id;
-  private String street;
-  private String avenue;
-  private String description;
-  private City city;
-  private String postalCode;
   private Customer customer;
+  private LocalDateTime localDateTime;
 
 }

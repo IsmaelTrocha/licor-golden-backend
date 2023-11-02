@@ -30,7 +30,7 @@ public class OrderController {
 
         OrderResponse response = new OrderResponse(
                 savedOrder.getId(),
-                savedOrder.getUser().getId(),
+                savedOrder.getCustomer().getId(),
                 savedOrder.getTotal()
         );
 
