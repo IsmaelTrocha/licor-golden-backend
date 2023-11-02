@@ -2,6 +2,7 @@ package com.liquorsgolden.lq.infrastructure.repository.product;
 
 
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -19,4 +20,6 @@ public interface ProductRepository extends JpaRepository<ProductDto, Long> {
 
   List<ProductDto> findByCategory_IdOrderByIdAsc(Long categoryId);
   List<ProductDto> findByProportion_IdOrderByIdAsc(Long proportionId);
+
+  Optional<ProductDto> findByNameProduct(String name);
 }

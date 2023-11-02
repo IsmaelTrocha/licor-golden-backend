@@ -21,4 +21,9 @@ public class GetProductByIdAdapter implements GetProductByIdService {
     Optional<ProductDto> productDto = productRepository.findById(id);
     return productDto.map(productDtoMapper::toEntity).orElse(null);
   }
+
+  @Override
+  public Product getProductByName(String name) {
+    return productDtoMapper.toEntity(productRepository.findByNameProduct(name).orElse(null)) ;
+  }
 }

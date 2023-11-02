@@ -53,6 +53,14 @@ public class ProductController {
   private final GetAllProductByCategoryIdApplication getAllProductByCategoryIdApplication;
   private final GetAllProductByProportionIdApplication getAllProductByProportionIdApplication;
 
+
+  @PostMapping("/create")
+  public ResponseEntity<Long> save(@Valid @RequestBody ProductRequest productRequest) {
+    Product savedProduct = createProductApplication.createProduct(
+        productRequestMapper.toEntity(productRequest));
+    return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct.getId());
+  }
+
   @GetMapping("/getByProportion")
   public ResponseEntity<List<ProductResponse>> getByProportion(
           @RequestHeader Long proportionId) {
@@ -90,12 +98,6 @@ public class ProductController {
             imageUploadApplication.imageUpload(image)));
   }
 
-  @PostMapping("/create")
-  public ResponseEntity<Long> save(@Valid @RequestBody ProductRequest productRequest) {
-    Product productToUpdate = productRequestMapper.toEntity(productRequest);
-    Product savedProduct = createProductApplication.createProduct(productToUpdate);
-    return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct.getId());
-  }
 
 
   @PutMapping("/update")
