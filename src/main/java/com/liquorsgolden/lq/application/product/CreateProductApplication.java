@@ -15,8 +15,9 @@ public class CreateProductApplication {
   private final UpdateStockProductApplication updateStockProductApplication;
 
   public Product createProduct(Product product) {
-//    productProcess.validateImage(product);
     Product products = getProductByIdApplication.getProductByName(product.getNameProduct());
+    productProcess.validateImage(product);
+    Product products = getProductByIdApplication.getProduct(product.getId());
     if (Objects.nonNull(products)) {
       updateStockProductApplication.updateStockProduct(
           products.getStock() + product.getStock(),
