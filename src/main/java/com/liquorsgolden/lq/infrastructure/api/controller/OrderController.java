@@ -1,6 +1,7 @@
 package com.liquorsgolden.lq.infrastructure.api.controller;
 
 import com.liquorsgolden.lq.application.order.CreateOrderApplication;
+import com.liquorsgolden.lq.domain.entities.Order;
 import com.liquorsgolden.lq.infrastructure.api.dto.request.order.OrderRequest;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.order.OrderResponse;
 import com.liquorsgolden.lq.infrastructure.api.mapper.order.OrderRequestMapper;
@@ -23,6 +24,11 @@ public class OrderController {
 
     @PostMapping("/create")
     public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
+        Order orderToUpdate = orderRequestMapper.toEntity(orderRequest);
+        Order savedOrder = createOrderApplication.createOrder(orderToUpdate);
+
+
+
         return new ResponseEntity<>(new OrderResponse(), HttpStatus.CREATED);
     }
 }
