@@ -1,6 +1,5 @@
 package com.liquorsgolden.lq.infrastructure.api.dto.response.address;
 
-import com.liquorsgolden.lq.infrastructure.api.dto.response.CustomerResponse;
 import com.liquorsgolden.lq.infrastructure.api.dto.response.city.CityResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;

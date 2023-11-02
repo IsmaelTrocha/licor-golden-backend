@@ -1,13 +1,11 @@
 package com.liquorsgolden.lq.infrastructure.api.dto.request.order;
 
-import com.liquorsgolden.lq.domain.entities.Product;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @Data
 @AllArgsConstructor
