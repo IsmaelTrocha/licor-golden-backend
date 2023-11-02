@@ -9,6 +9,5 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface OrderResponseMapper extends EntityToDto<Order, OrderResponse> {
 
-
     OrderResponse toDto(Order order);
 }
