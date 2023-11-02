@@ -8,9 +8,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class GetAllStatusApplication {
 
-    private final GetAllStatusService getAllStatusService;
+  private final GetAllStatusService getAllStatusService;
 
-    public List<Status> getAllStatus() {
-        return getAllStatusService.getAllStatus();
-    }
+  public List<Status> getAllStatus() {
+    return getAllStatusService.getAllStatus();
+  }
 }

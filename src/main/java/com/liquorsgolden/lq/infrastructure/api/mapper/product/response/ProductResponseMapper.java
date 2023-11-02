@@ -14,11 +14,11 @@ import org.mapstruct.MappingConstants;
 }, injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface ProductResponseMapper {
 
-    @Mapping(source = "category.id", target = "categoryId")
-    @Mapping(source = "status.id", target = "statusId")
-    @Mapping(source = "proportion.id", target = "proportionId")
-    ProductResponse toDto(Product product);
+  @Mapping(source = "category.id", target = "categoryId")
+  @Mapping(source = "status.id", target = "statusId")
+  @Mapping(source = "proportion.id", target = "proportionId")
+  ProductResponse toDto(Product product);
 
-    List<ProductResponse> toListDto(List<Product> products);
+  List<ProductResponse> toListDto(List<Product> products);
 
 }

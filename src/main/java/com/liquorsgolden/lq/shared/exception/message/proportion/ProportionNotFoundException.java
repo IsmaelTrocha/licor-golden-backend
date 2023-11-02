@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 public class ProportionNotFoundException extends BaseException {
 
 
-    public ProportionNotFoundException(String message) {
-        super(false, HttpStatus.NOT_FOUND, message, ExceptionCode.PROPORTION_NOT_FOUND);
-    }
+  public ProportionNotFoundException(String message) {
+    super(false, HttpStatus.NOT_FOUND, message, ExceptionCode.PROPORTION_NOT_FOUND);
+  }
 }

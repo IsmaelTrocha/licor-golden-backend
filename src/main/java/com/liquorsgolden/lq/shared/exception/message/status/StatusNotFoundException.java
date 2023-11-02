@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 public class StatusNotFoundException extends BaseException {
 
 
-    public StatusNotFoundException(String message) {
-        super(false, HttpStatus.NOT_FOUND, message, ExceptionCode.STATUS_NOT_FOUND);
-    }
+  public StatusNotFoundException(String message) {
+    super(false, HttpStatus.NOT_FOUND, message, ExceptionCode.STATUS_NOT_FOUND);
+  }
 }

@@ -38,7 +38,7 @@ public class ProductDto {
   @JoinColumn(name = "proportion_id", referencedColumnName = "id")
   private ProportionDto proportion;
 
-  @Column(name = "name_product", unique=true)
+  @Column(name = "name_product", unique = true)
   private String nameProduct;
   @Column(name = "description")
   private String description;

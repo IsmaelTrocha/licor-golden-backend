@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/order")
 public class OrderController {
 
-    private final CreateOrderApplication createOrderApplication;
-    private final OrderRequestMapper orderRequestMapper;
+  private final CreateOrderApplication createOrderApplication;
+  private final OrderRequestMapper orderRequestMapper;
 
-    @PostMapping("/create")
-    public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
-        return new ResponseEntity<>(new OrderResponse(), HttpStatus.CREATED);
-    }
+  @PostMapping("/create")
+  public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
+    return new ResponseEntity<>(new OrderResponse(), HttpStatus.CREATED);
+  }
 }

@@ -8,7 +8,7 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ImageUploadResponseMapper {
 
-    ImageUploadResponse toDto(ImageUpload imageUpload);
+  ImageUploadResponse toDto(ImageUpload imageUpload);
 
-    ImageUpload toEntity(ImageUploadResponse imageUploadResponse);
+  ImageUpload toEntity(ImageUploadResponse imageUploadResponse);
 }

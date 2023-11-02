@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Proportion {
 
-    private Long id;
-    private String quantity;
+  private Long id;
+  private String quantity;
 }

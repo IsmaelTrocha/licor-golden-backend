@@ -8,8 +8,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants.ComponentModel;
 
 @Mapper(componentModel = ComponentModel.SPRING, uses = {
-        CategoryDtoMapper.class
+    CategoryDtoMapper.class
 }, injectionStrategy = InjectionStrategy.CONSTRUCTOR)
-public interface ProductDtoMapper extends EntityToDto<Product,ProductDto> {
+public interface ProductDtoMapper extends EntityToDto<Product, ProductDto> {
 
 }

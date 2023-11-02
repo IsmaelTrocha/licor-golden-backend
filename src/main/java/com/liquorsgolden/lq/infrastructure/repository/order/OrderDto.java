@@ -37,9 +37,9 @@ public class OrderDto {
 
   @ManyToMany // Cambia a @ManyToMany para tener una lista de productos
   @JoinTable(
-          name = "order_products",
-          joinColumns = @JoinColumn(name = "order_id"),
-          inverseJoinColumns = @JoinColumn(name = "product_id")
+      name = "order_products",
+      joinColumns = @JoinColumn(name = "order_id"),
+      inverseJoinColumns = @JoinColumn(name = "product_id")
   )
   private List<ProductDto> products; // Cambia a una lista de ProductDto
 

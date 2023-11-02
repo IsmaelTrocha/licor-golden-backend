@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ImageUploadResponse {
 
-    private String name;
-    private String resource;
+  private String name;
+  private String resource;
 }

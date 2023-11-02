@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "PROPORTION")
 public class ProportionDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String quantity;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+  private String quantity;
 }
