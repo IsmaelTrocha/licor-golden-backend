@@ -10,15 +10,19 @@ The project uses Spring Boot for back-end development and Java as the main langu
 
 <details>
 <summary><b>Spring Boot</b></summary>
-  <details> <summary><b> Dependencies Used</b></summary></details>
-  
-</details>
+
+Spring Boot is a framework for building Java-based enterprise applications. It simplifies the process of building production-ready applications and provides a convention-over-configuration approach.
 
 <details>
-<summary><b>Java</b></summary>
-  Principal programming language used.
+<summary><b>Dependencies</b></summary>
+
+- **Spring Boot Starter Web:** Used for building web applications, including RESTful applications using Spring MVC.
+- **Spring Boot Starter Data JPA:** Provides support for the Java Persistence API (JPA) for data access.
+- **Spring Boot Starter Test:** Includes testing libraries like JUnit and Mockito for unit testing.
+
 </details>
 
+</details>
 <details>
 <summary><b>JUnit y Mockito</b></summary>
   Used to perform unit tests and follow TDD methodology.
