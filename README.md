@@ -16,7 +16,7 @@ Spring Boot is a framework for building Java-based enterprise applications. It s
 <details>
 
 
-  **Dependencies:**
+  **Dependencies:** 
 
 - Spring Web
 - Spring Data JPA
