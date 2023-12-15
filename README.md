@@ -16,13 +16,14 @@ Spring Boot is a framework for building Java-based enterprise applications. It s
 <details>
 
 
-<blockquote>
-  <summary><b>Dependencies</b></summary>
-  - **Spring Boot Starter Web:** Used for building web applications, including RESTful applications using Spring MVC.
-  - **Spring Boot Starter Data JPA:** Provides support for the Java Persistence API (JPA) for data access.
-  - **Spring Boot Starter Test:** Includes testing libraries like JUnit and Mockito for unit testing.
+  **Dependencies:**
 
-</blockquote>
+- Spring Web
+- Spring Data JPA
+- Spring Starter Test
+- H2 Database (To store all data in memory)
+- Lombok
+
 
 </details>
 
