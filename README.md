@@ -34,6 +34,13 @@ Spring Boot is a framework for building Java-based enterprise applications. It s
   Used to perform unit tests and follow TDD methodology.
 </details>
 
+## How to run the project?
+
+- First of all you didn't need install any Database Management, or Image, container or stuff like that because all the data is storage in memory.
+- Create a new Directory and inside open the terminal and paste this command --> ( git clone https://github.com/IsmaelTrocha/Evolution-Code.git )
+- Then that we download the repository, open your favorite IDE and navigate to the project we downloaded.
+- Doing all these steps the last stage is execute the program, so feel fre to do it.
+
 ## Project Structure
 
 The project structure follows the hexagonal architecture, dividing responsibilities into layers:
