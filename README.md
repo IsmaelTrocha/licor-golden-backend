@@ -10,7 +10,7 @@ The project uses Spring Boot for back-end development and Java as the main langu
 
 <details>
 <summary><b>Spring Boot</b></summary>
-  <details>  Dependencies Used</details>
+  <details> <summary><b> Dependencies Used</b></summary></details>
   
 </details>
 
