@@ -13,17 +13,15 @@ The project uses Spring Boot for back-end development and Java as the main langu
 
 Spring Boot is a framework for building Java-based enterprise applications. It simplifies the process of building production-ready applications and provides a convention-over-configuration approach.
 
+
 <details>
-
-
-  <summary> <b>Dependencies</b></summary>
+<summary><b>Dependencies</b></summary>
 
 - Spring Web
 - Spring Data JPA
 - Spring Starter Test
 - H2 Database (To store all data in memory)
 - Lombok
-
 
 </details>
 
